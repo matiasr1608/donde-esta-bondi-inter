@@ -55,13 +55,15 @@ $(document).ready(function () {
                                 .bindPopup("<b>" + bus.properties.linea + "</b><br>Destino: " + bus.properties.destinoDesc));
 
                         });
+                        $("#alert_tiempo").empty();
+
                         if (((Date.now() - response.lastUpdateDB) >= 30000)) {
                             $("#alert_tiempo").empty()
                                 .append('<div class="alert alert-warning alert-dismissible fade show" role="alert">Las ubicaciones no están actualizadas, intente de nuevo en unos segundos.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
                             console.log("mas de 30 seg");
                             updateDB();
-                            setTimeout($("#search").addClass("disabled"), 5000)
-                            setTimeout($("#search").removeClass("disabled"), 5000)
+                            $("#search").addClass('disabled');
+                            setTimeout(function(){$("#search").removeClass('disabled')},5000)
 
                         }
                     }else {
