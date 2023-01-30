@@ -26,6 +26,7 @@ $(document).ready(function () {
         )
     }
     updateDB();
+   
     var markers = new Array();  //array for the markers of the map
 
 
@@ -38,9 +39,7 @@ $(document).ready(function () {
                 // data:JSON.stringify({"subsistema":"-1","empresa":"-1"}),
                 success: function (response) {
                     console.log(response)
-
-
-
+                    
                     buses = response.data;
                     if(buses.length > 0){
                         destinos = []; // to save later destinations to choose from
@@ -50,6 +49,7 @@ $(document).ready(function () {
                                 map.removeLayer(marker)
                             ))
                         }
+                        markers = new Array();
                         buses.forEach(bus => {
                             markers.push(L.marker(bus.geometry.coordinates.reverse()).addTo(map)
                                 .bindPopup("<b>" + bus.properties.linea + "</b><br>Destino: " + bus.properties.destinoDesc));
@@ -59,8 +59,8 @@ $(document).ready(function () {
 
                         if (((Date.now() - response.lastUpdateDB) >= 30000)) {
                             $("#alert_tiempo").empty()
-                                .append('<div class="alert alert-warning alert-dismissible fade show" role="alert">Las ubicaciones no están actualizadas, intente de nuevo en unos segundos.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
-                            console.log("mas de 30 seg");
+                                .append('<div class="alert alert-warning alert-dismissible fade show" role="alert">Las ubicaciones no están actualizadas, intente de nuevo en unos segundos.(diferencia '+(Date.now() - response.lastUpdateDB)/1000 +'segundos)<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
+                            console.log("mas de 20 seg");
                             updateDB();
                             $("#search").addClass('disabled');
                             setTimeout(function(){$("#search").removeClass('disabled')},5000)
