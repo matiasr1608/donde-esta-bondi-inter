@@ -24,9 +24,9 @@ $(document).ready(function () {
                 }
             }
         )
-        var markers = new Array();  //array for the markers of the map
     }
     updateDB();
+    var markers = new Array();  //array for the markers of the map
 
 
     $("#search").click(() => {
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 
                     buses = response.data;
-                    if(buses.lenght > 0){
+                    if(buses.length > 0){
                         destinos = []; // to save later destinations to choose from
                         //remove markers if there are any
                         if (markers.lenght != 0) {
