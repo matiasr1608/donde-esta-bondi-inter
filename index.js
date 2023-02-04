@@ -20,6 +20,26 @@ $(document).ready(function () {
                 .catch(err => console.log("service worker not registered", err))
         })
     }
+    // PWA BUTTON
+    var beforeInstallPrompt = null;   //variable to save the event 
+
+    window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
+
+    function eventHandler(event) {
+        beforeInstallPrompt = event;
+        document.getElementById("pwa_btn").removeAttribute("disabled");
+    }
+
+    function errorHandler(event) {
+        console.log("error: " + event);
+    }
+
+    $("#pwa_btn").click(()=>{
+        if (beforeInstallPrompt) {beforeInstallPrompt.prompt()};
+    })
+
+
+
     // MAPA
     map = L.map('map').setView([-34.814733, -56.180452], 9);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -68,10 +88,10 @@ $(document).ready(function () {
 
         if (buses.length > 0) {
             destinos = new Array(); // to save later destinations to choose from
-            new Promise(function(resolve){
+            new Promise(function (resolve) {
                 showBuses(buses)
                 resolve()
-            }).then(function(){
+            }).then(function () {
                 map.fitBounds(bounds)
             })
 
@@ -89,11 +109,11 @@ $(document).ready(function () {
                 updateDB();
                 $("#search").addClass('disabled');
                 $("#search").html("Espere")
-                setTimeout(function () { $("#search").removeClass('disabled'); $("#search").html("Actualizar")}, 5000)
+                setTimeout(function () { $("#search").removeClass('disabled'); $("#search").html("Actualizar") }, 5000)
 
             }
             $(".tercero").removeClass("invisible")
-           
+
         } else {
             $("#alert_tiempo").empty()
 
@@ -131,11 +151,11 @@ $(document).ready(function () {
             destChecked.push(($(this).val()))
         })
         buesesChecked = buses.filter(bus => destChecked.includes(bus.properties.destinoDesc)) //
-       
+
 
         showBuses(buesesChecked);
-       
-        showBuses( buesesChecked);
+
+        showBuses(buesesChecked);
 
     };
 
@@ -151,7 +171,7 @@ $(document).ready(function () {
         }).then(function () {
             busess.forEach((bus) => {
                 const marker = L.marker(bus.geometry.coordinates.reverse())
-                marker.bindPopup("<b>" + bus.properties.linea + "</b></br>Destino: " + bus.properties.destinoDesc + "</br> Tipo: "+bus.properties.sublinea)
+                marker.bindPopup("<b>" + bus.properties.linea + "</b></br>Destino: " + bus.properties.destinoDesc + "</br> Tipo: " + bus.properties.sublinea)
                 // marker.addTo(map)
                 markers.push(marker)
 
@@ -162,23 +182,23 @@ $(document).ready(function () {
         })
     }
 
-//    const changeMapViewport = (buses)=>{
-//     var maxLat = null
-//     var maxLong = null
-//     var minLat= null
-//     var minLong= null
-//     buses.forEach(bus =>{
-//         if(bus.geometry.coordinates[1] > maxLat){ maxLat = bus.geometry.coordinates[1]}
-//         if(bus.geometry.coordinates[1] < minLat){ minLat = bus.geometry.coordinates[1]}
-//         if(bus.geometry.coordinates[0] > maxLong){ maxLong = bus.geometry.coordinates[0]}
+    //    const changeMapViewport = (buses)=>{
+    //     var maxLat = null
+    //     var maxLong = null
+    //     var minLat= null
+    //     var minLong= null
+    //     buses.forEach(bus =>{
+    //         if(bus.geometry.coordinates[1] > maxLat){ maxLat = bus.geometry.coordinates[1]}
+    //         if(bus.geometry.coordinates[1] < minLat){ minLat = bus.geometry.coordinates[1]}
+    //         if(bus.geometry.coordinates[0] > maxLong){ maxLong = bus.geometry.coordinates[0]}
 
-//         if(bus.geometry.coordinates[0] < minLong){ minLong = bus.geometry.coordinates[0]}
-//     })
-//     map.fitBounds([
-//         [minLat, minLong],
-//         [maxLat, maxLong]
-//     ]);
-//    }
+    //         if(bus.geometry.coordinates[0] < minLong){ minLong = bus.geometry.coordinates[0]}
+    //     })
+    //     map.fitBounds([
+    //         [minLat, minLong],
+    //         [maxLat, maxLong]
+    //     ]);
+    //    }
 
 
 
