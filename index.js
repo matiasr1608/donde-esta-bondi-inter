@@ -37,6 +37,15 @@ $(document).ready(function () {
     $("#pwa_btn").click(()=>{
         if (beforeInstallPrompt) {beforeInstallPrompt.prompt()};
     })
+    //button to show modal if there isnt an event
+    setTimeout(()=>{
+        if(!beforeInstallPrompt){
+            document.getElementById("pwa_btn").removeAttribute("disabled");
+            $("#pwa_btn").attr('data-bs-toggle',"modal")
+            $("#pwa_btn").attr("data-bs-target","#exampleModal")
+
+        }
+    } ,500)
 
 
 
@@ -66,6 +75,14 @@ $(document).ready(function () {
         )
     }
     updateDB();
+
+    //ROUTES BUTTON 
+    $("#routes_btn").click(()=>{
+        alert("Nuevas funciones, inclyendo los recorridos aparecerán pronto!");
+    }
+    )
+    //////
+
 
     $("#search").click(async () => {
         $.ajax(
@@ -235,53 +252,53 @@ $(document).ready(function () {
 
     let empresas = [
         {
-            codigo: '10',
-            descripcion: 'C.O.E.T.C.'
-        },
-        {
             codigo: '13',
-            descripcion: 'EMPRESA CASANOVA LIMITADA'
-        },
-        {
-            codigo: '18',
-            descripcion: 'C.O.P.S.A.'
-        },
-        {
-            codigo: '20',
-            descripcion: 'C.O.M.E.S.A'
+            descripcion: 'CASANOVA LIMITADA'
         },
         {
             codigo: '29',
             descripcion: 'C.I.T.A.'
         },
         {
-            codigo: '32',
-            descripcion: 'SAN ANTONIO TRANSPORTE Y TURISMO (SATT)'
+            codigo: '10',
+            descripcion: 'C.O.E.T.C.'
         },
         {
             codigo: '33',
             descripcion: 'C.O. DEL ESTE'
         },
         {
-            codigo: '35',
-            descripcion: 'TALA-PANDO-MONTEVIDEO'
+            codigo: '20',
+            descripcion: 'C.O.M.E.S.A'
         },
         {
-            codigo: '39',
-            descripcion: 'ZEBALLOS HERMANOS'
+            codigo: '18',
+            descripcion: 'C.O.P.S.A.'
         },
+        
         {
             codigo: '50',
             descripcion: 'C.U.T.C.S.A.'
+        },
+        {
+            codigo: '32',
+            descripcion: 'SATT'
+        },
+       
+        {
+            codigo: '35',
+            descripcion: 'TALA-PANDO-MONTEVIDEO'
         },
         {
             codigo: '70',
             descripcion: 'U.C.O.T.'
         },
         {
-            codigo: '80',
-            descripcion: 'COIT'
-        }
+            codigo: '39',
+            descripcion: 'ZEBALLOS HERMANOS'
+        },
+        
+        
 
     ];
 

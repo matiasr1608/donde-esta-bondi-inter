@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
+    <!-- Google adsense  -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9211148063872780"
+        crossorigin="anonymous"></script>
     <!-- manifest  -->
     <link rel="manifest" href="manifest.json" />
     <!-- others -->
@@ -9,12 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dónde está mi bondi?</title>
+    <meta name="description"
+        content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
+    <meta name="keywords" content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste" />
     <!-- css boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="jquery-3.6.3.min.js"></script>
     <link rel="stylesheet" href="/css/custom_index.css">
-
     <script src="index.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -25,17 +30,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#033d8a" />
+    <!-- link apple icon -->
+    <link rel="apple-touch-icon" href="images/logo_192.png">
+    <!-- fav icon -->
+    <link rel="icon" type="image/x-icon" href="/images/logo_225.png">
 </head>
 
 <body>
-    <div class="flex-container" style="min-height: 100vh;">
+    <div class="flex-container">
         <nav class="sticky-top">
 
         </nav>
         <header class="text-center">
-            <div class="row mt-2 mb-5 justify-content-left">
-                <div class="col-1" justfy-content-center>
-                    <!-- <div class="dropdown">
+            <div class="row mt-2 mb-5 justify-content-center">
+                <!-- <div class="col-1" justfy-content-center>
+                    <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle mt-3 ml-3" type="button"  data-bs-toggle="dropdown" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -57,8 +68,8 @@
                                         <path  d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
                                     </svg></a>
                         </ul>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                 <div class="col-10 ">
                     <h1 class="fw-bold mt-3">Ubicá tu bondi:</h1>
                     <p class="fw-semibold">Versión suburbanos e interdepartamentales.</p>
@@ -89,7 +100,7 @@
                             <button type="button" class="btn btn-primary segundo invisible" id="search">Buscar</button>
                             <p class="tercero invisible">Seleccioná el destino:</p>
                             <div class="mt-1" id="switch_destinations">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -99,7 +110,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <div class="d-flex col-10" id="map" style="height: 30rem;">
+                <div class="d-flex col-10" id="map" style="height: 30rem; z-index: 0">
 
                 </div>
             </div>
@@ -124,18 +135,82 @@
                     <input type="radio" class="btn-check" name="options" id="contact_button" autocomplete="off">
                     <label class="btn btn-outline-info" for="contact_button"></label>
                 </div> -->
-
-                <p>Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn" disabled>Aquí</button></p>
+                <p class="mt-5">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
+                        disabled>Aquí</button>  </p>
                 <p>En desarollo con &hearts; por <a href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
-                <p>Version ALPHA 0.0.2</p>
+                <p>Version ALPHA 0.0.3</p>
 
             </div>
         </footer>
+        <div class="w-100 barra" style=" background-color: #0462DC;">
+            <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
+                onclick="window.location.href='#map'" style=" background-color: #0462DC;" id="map_btn" aria-label="Show Map">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+            </button>
+            <div class="row justify-content-around text-center">
+                <div class="col-4 ">
+                    <button class="btn btn-primary-outline boton-barra" onclick="window.location.href='./about.html'"
+                        style=" background-color: #0462DC;" id="about_btn"  aria-label="Show About page">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                    </button>
+
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn" aria-label="Show routes">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-sign-turn-right" viewBox="0 0 16 16">
+                            <path
+                                d="M5 8.5A2.5 2.5 0 0 1 7.5 6H9V4.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L9.41 8.658A.25.25 0 0 1 9 8.466V7H7.5A1.5 1.5 0 0 0 6 8.5V11H5V8.5Z" />
+                            <path fill-rule="evenodd"
+                                d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+            <!-- <div>
+                
+            </div> -->
 
 
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Como instalar la app?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Si tenés un Iphone:</h3>
+                        <p>Primero cliqueá en:</p>
+                        <img src="./images/iphone_1.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                        <p>Y luego en:</p>
+                        <img src="./images/iphone_2.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                        <hr>
+                        <h3>Si tenés un dispositivo con Android:</h3>
+                        <p>Primero cliqueá en los 3 puntitos (puede variar la ubicación dependiendo del navegador):</p>
+                        <img src="./images/android_1.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                        <p>Luego haz click en "Instalar aplicación"</p>
 
-
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
 </body>

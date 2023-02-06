@@ -1,8 +1,25 @@
-.myDropdown{
+.myDropdown {
     border-color: transparent !important;
     background-color: transparent !important;
     min-width: 0 !important;
 }
+
 .dropdown-toggle::after {
     content: none;
+}
+
+.barra {
+    position: fixed;
+    bottom: 0;
+    height: 2rem;
+    padding-top: 2px;
+}
+body{
+    padding-bottom: 2rem;
+}
+/* html{
+    overflow: hidden;
+} */
+.boton-barra{
+    padding: 0;
 }

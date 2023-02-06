@@ -7,7 +7,11 @@
     "theme_color": "#033d8a",
     "orientation": "portrait-primary",
     "icons": [{
-        "src": "/images/bondi.png",
+        "src": "/images/logo_225.png",
         "type": "image/png", "sizes": "225x225"
-      }]
+      },{
+        "src": "/images/logo_512.png",
+        "type": "image/png", "sizes": "512x512", "purpose": "any maskable"
+      }
+    ]
 }
