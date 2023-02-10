@@ -3,8 +3,8 @@ const websiteStaticCache = "donde_esta_mi_bus_V1"
 const assets = [
     "/",
     "/index.html",
-    "/index.js",
-    "/jquery-3.6.3.min.js"
+    "/js/index.js",
+    "/js/jquery-3.6.3.min.js"
 ]
 
 self.addEventListener("install", installEvent => {
