@@ -1,4 +1,4 @@
-const websiteStaticCache = "donde_esta_mi_bus_V1"
+const websiteStaticCache = "donde_esta_mi_bus_V0.0.4"
 
 const assets = [
     "/",
