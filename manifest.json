@@ -1,6 +1,6 @@
 {
-    "name": "Dónde esta mi bus? Versión inter",
-    "short_name": "BusInter",
+    "name": "¿Dónde esta mi bus?",
+    "short_name": "MiBondi",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#fdfdfd",
