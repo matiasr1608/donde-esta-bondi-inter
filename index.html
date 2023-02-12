@@ -5,6 +5,17 @@
     <!-- Google adsense  -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9211148063872780"
         crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHBZQF38H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0CHBZQF38H');
+    </script>
+
     <!-- manifest  -->
     <link rel="manifest" href="manifest.json" />
     <!-- others -->
@@ -14,7 +25,8 @@
     <title>Dónde está mi bondi?</title>
     <meta name="description"
         content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
-    <meta name="keywords" content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste" />
+    <meta name="keywords"
+        content="ubiación, omnibus, horarios, bondi, stm, copsa, cita, codeleste, zeballos hermaos, satt, tpm" />
     <!-- css boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -74,7 +86,10 @@
                             </select>
                             <button type="button" class="btn btn-primary segundo mb-4" id="search"
                                 disabled>Buscar</button>
-                            <p class="tercero invisible">Podés volver a actualizar todas las veces que quieras, incluso luego de seleccionar el destino.</p>
+                                <div id="alert_tiempo">
+                                </div>
+                            <p class="tercero invisible">Podés volver a actualizar todas las veces que quieras, incluso
+                                luego de seleccionar el destino.</p>
                             <hr class="tercero invisible">
                             <p class="tercero invisible mb-0 fw-semibold">Seleccioná el destino:</p>
                             <div class="mt-1" id="switch_destinations">
@@ -82,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="alert_tiempo">
+                    <div id="alert_follow">
                     </div>
 
                 </div>
@@ -105,10 +120,10 @@
             <div class="h-auto">
                 <p class="mt-5">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
                         disabled>Aquí</button> </p>
-                <p class="fs-6 mb-0">En desarollo con &hearts; por <a
-                        href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
-                <p class="mb-3">Si te gusta el proyecto me podés comprar un <a href="https://mpago.la/2rD9qdS">cafecito
+                <p class="mb-0">Si te gusta el proyecto me podés comprar un <a href="https://mpago.la/2rD9qdS">cafecito
                         &#9749;.</a></p>
+                <p class="fs-6 mb-5">En desarollo con &hearts; por <a
+                        href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
 
 
             </div>

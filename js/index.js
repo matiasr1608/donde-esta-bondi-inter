@@ -8,7 +8,8 @@ var markers = new Array();
 var bounds = null;
 var firstTime = true;  // to ckeck if it is the first time that searches or is it an update 
 let timeOut = null;
-
+var selectedBus = null;
+var timerfollowBus = null;
 
 
 $(document).ready(function () {
@@ -187,12 +188,12 @@ $(document).ready(function () {
             destChecked.push(($(this).val()))
         })
         buesesChecked = buses.filter(bus => destChecked.includes(bus.properties.destinoDesc)) //
-        showBuses(buesesChecked);
+        showBuses(buesesChecked,15);
 
     };
 
 
-    function showBuses(busess) { //add buses to the map recived as an array
+    function showBuses(busess, zoom) { //add buses to the map recived as an array
         //remove markers if there are any'
         new Promise(function (resolve) {
             map.removeLayer(groupMarkers)
@@ -201,24 +202,36 @@ $(document).ready(function () {
         }).then(() => {
             busess.forEach((bus) => {
                 const marker = L.marker(bus.geometry.coordinates) //removed reverse()
-                marker.bindPopup("<b>" + bus.properties.linea + "</b></br>Destino: " + bus.properties.destinoDesc + "</br> Tipo: " + bus.properties.sublinea)
+                marker.bindPopup(`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${bus.properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus">Seguí tu bondi</button> </div>
+                </br>Destino: ${bus.properties.destinoDesc} </br>
+                 Tipo: ${bus.properties.sublinea}`)
+                    .on("click", saveSelectedBus)
                 // marker.addTo(map)
                 markers.push(marker)
                 marker.addTo(groupMarkers)
+                bus.marker_id = groupMarkers.getLayerId(marker)   // vinculate each bus to a marker in the map
             })
             groupMarkers.addTo(map);
-            new Promise((resolve) => {
+            //new Promise((resolve) => {
                 bounds = null
                 bounds = groupMarkers.getBounds();
-                resolve()
-            }).then(() => {
-                if (busess.length > 0) {
+             //   resolve()
+            //}).then(() => {
+                
+                if (busess.length > 1) {
                     map.fitBounds(bounds)
+                } else {
                 }
-            }
-            )
+                if(buses.length == 1){
+                    map.setView(busess[0].geometry.coordinates, zoom)
+                }
+           // }
+            //)
+            //$('.leaflet-marker-icon').on('click',(e)=>{saveSelectedBus(e)});
+
         })
     }
+
 
 
     $("#empresa").change(function () {
@@ -235,6 +248,65 @@ $(document).ready(function () {
         firstTime = true
     }
     )
+    const saveSelectedBus = (e) => {   // saves the bus vinculated to the marker clicked
+        selectedBus = null
+        console.log(groupMarkers.getLayerId(e.target))
+        //console.log(e)
+        //console.log(groupMarkers.getLayerId(e.target))
+        selectedBus = buses.filter(bus => bus.marker_id == groupMarkers.getLayerId(e.target))
+    }
+
+    const followSelectedBus = (response) => {   // centers the map on the selected bus
+        if (response) {
+            if (((Date.now() - response.lastUpdateDB) >= 20000)) {
+                updateDB();
+            }
+            buses = response.data
+            buses.forEach(bus => { bus.geometry.coordinates.reverse() })
+            showBuses(buses, map.getZoom())
+            //var mapZoom = null;
+            //mapZoom = map.getZoom()
+            //map.setView(response.data[0].geometry.coordinates.reverse(), 9)
+
+
+            //console.log(mapZoom)
+        } else {
+            map.setView(selectedBus[0].geometry.coordinates, 15)
+            timerfollowBus = setInterval(() => {
+                getBusByID(selectedBus[0].properties.id)
+            }, 7000)
+        }
+        $("#alert_follow").empty()
+            .append('<div style="display: flex; justify-content: space-between;" class="alert alert-info fade show" role="alert"><p class="align-self-center mb-0 mt-0">Estás siguiendo a tu bondi (actualización automática).</p><button type="button" class="btn btn btn-outline-danger align-self-right" id="closeBtnFollow">Dejar de seguir</button> </div>')
+        $("#closeBtnFollow").click(() => {
+            $("#alert_follow").empty()
+            clearInterval(timerfollowBus)
+            timerfollowBus = null
+            ajaxSearchBuses()
+        })
+    }
+
+    $(document).on("click", ".seguiBus", function (e) {   //adds the events fot p tag that dosnt yet exists
+        followSelectedBus();
+    });
+
+
+
+
+
+    const getBusByID = (ID) => {
+        $.ajax(
+            {
+                url: `https://${DENO_URL}/getBusbyID?ID=${ID}`,
+                method: "get",
+                contentType: "application/json",
+                // data:JSON.stringify({"subsistema":"-1","empresa":"-1"}),
+                success: (response) => {
+                    followSelectedBus(response)
+                }
+            }
+        )
+    }
 
     let empresas = [
         {
