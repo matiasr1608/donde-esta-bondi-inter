@@ -1,5 +1,5 @@
 // const { cssNumber } = require("jquery");
-const DENO_URL = 'donde-estan-buses.deno.dev'
+const DENO_URL = 'backend.matiasrolando.com'
 var lineas = { 10: ['2', '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', '4DR', '600', '76', 'CE1', 'D9', 'G', 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', '802', '803', '804', '809', '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ['1M1', '1M12', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', '268', '276', '60', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L15', 'L2', 'L20', 'L22', 'L26', 'L28', 'L3', 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ['11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', 'L12', 'L31', 'L33', 'U11C', 'XA1'], 80: [] }
 var buses = null;
 var map = null;
@@ -10,6 +10,7 @@ var firstTime = true;  // to ckeck if it is the first time that searches or is i
 let timeOut = null;
 var selectedBus = null;
 var timerfollowBus = null;
+var selectedMarker =null;
 
 
 $(document).ready(function () {
@@ -22,6 +23,9 @@ $(document).ready(function () {
                 .catch(err => console.log("service worker not registered", err))
         })
     }
+    // navigator.serviceWorker.ready.then((registration) => {
+    //     registration.update();
+    //   });
     // PWA BUTTON
     var beforeInstallPrompt = null;   //variable to save the event 
 
@@ -79,12 +83,8 @@ $(document).ready(function () {
     }
     updateDB();
 
-    //ROUTES BUTTON 
-    $("#routes_btn").click(() => {
-        alert("Nuevas funciones, inclyendo los recorridos aparecerán pronto!");
-    }
-    )
-    //////
+    
+    //////alert
 
     // SEARCH BUTTON
     $("#search").click(async () => {
@@ -147,7 +147,9 @@ $(document).ready(function () {
                 setTimeout(function () { $("#search").removeClass('disabled'); $("#search").html("Actualizar") }, 5000)
 
             }
-            $(".tercero").removeClass("invisible")
+            // $(".tercero").removeClass("invisible")
+            $(".tercero").removeAttr("hidden")
+            $("#select_company")[0].scrollIntoView()
 
         } else {
             $("#alert_tiempo").empty()
@@ -201,8 +203,12 @@ $(document).ready(function () {
             resolve();
         }).then(() => {
             busess.forEach((bus) => {
+                let btn_attr = null
+                if(timerfollowBus){ // if following a bus, the button of the pop up to follow a bus deactivated
+                    btn_attr = "disabled"
+                }
                 const marker = L.marker(bus.geometry.coordinates) //removed reverse()
-                marker.bindPopup(`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${bus.properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus">Seguí tu bondi</button> </div>
+                marker.bindPopup(`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${bus.properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus" ${btn_attr}>Seguí tu bondi</button> </div>
                 </br>Destino: ${bus.properties.destinoDesc} </br>
                  Tipo: ${bus.properties.sublinea}`)
                     .on("click", saveSelectedBus)
@@ -222,7 +228,7 @@ $(document).ready(function () {
                     map.fitBounds(bounds)
                 } else {
                 }
-                if(buses.length == 1){
+                if(busess.length == 1){
                     map.setView(busess[0].geometry.coordinates, zoom)
                 }
            // }
@@ -254,6 +260,7 @@ $(document).ready(function () {
         //console.log(e)
         //console.log(groupMarkers.getLayerId(e.target))
         selectedBus = buses.filter(bus => bus.marker_id == groupMarkers.getLayerId(e.target))
+        selectedMarker = e.target
     }
 
     const followSelectedBus = (response) => {   // centers the map on the selected bus
@@ -271,7 +278,8 @@ $(document).ready(function () {
 
             //console.log(mapZoom)
         } else {
-            map.setView(selectedBus[0].geometry.coordinates, 15)
+            showBuses(selectedBus, 15)
+            // map.setView(selectedBus[0].geometry.coordinates, 15)
             timerfollowBus = setInterval(() => {
                 getBusByID(selectedBus[0].properties.id)
             }, 7000)
@@ -287,7 +295,12 @@ $(document).ready(function () {
     }
 
     $(document).on("click", ".seguiBus", function (e) {   //adds the events fot p tag that dosnt yet exists
-        followSelectedBus();
+        if(!timerfollowBus){
+            followSelectedBus();  //only follow bus if there is a timer 
+        }
+        // selectedMarker._popup.setContent((`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${selectedBus[0].properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus" disabled>Siguiendo.</button> </div>
+        // </br>Destino: ${selectedBus[0].properties.destinoDesc} </br>
+        //  Tipo: ${selectedBus[0].properties.sublinea}`))
     });
 
 

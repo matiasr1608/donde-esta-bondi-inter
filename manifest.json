@@ -1,5 +1,5 @@
 {
-    "name": "¿Dónde esta mi bus?",
+    "name": "¿Dónde está Mi Bondi?",
     "short_name": "MiBondi",
     "start_url": "index.html",
     "display": "standalone",
@@ -7,10 +7,10 @@
     "theme_color": "#033d8a",
     "orientation": "portrait-primary",
     "icons": [{
-        "src": "/images/logo_225.png",
+        "src": "/images/logo_225_blue.png",
         "type": "image/png", "sizes": "225x225"
       },{
-        "src": "/images/logo_512.png",
+        "src": "/images/logo_512_blue.png",
         "type": "image/png", "sizes": "512x512", "purpose": "any maskable"
       }
     ]

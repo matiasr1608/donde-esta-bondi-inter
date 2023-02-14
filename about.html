@@ -20,10 +20,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dónde está mi bondi?</title>
+    <title>MIiBondi | Información</title>
     <meta name="description"
         content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
-    <meta name="keywords" content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste" />
+        <meta name="keywords" content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste, horarios, omnibus, canelones, san josé, montevideo, satt" />
     <!-- css boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -37,24 +37,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="#033d8a" />
     <!-- link apple icon -->
-    <link rel="apple-touch-icon" href="images/logo_192.png">
+    <link rel="apple-touch-icon" href="images/logo_192_blue.png">
     <!-- fav icon -->
-    <link rel="icon" type="image/x-icon" href="/images/logo_225.png">
+    <link rel="icon" type="image/x-icon" href="/images/logo_225_blue.png">
 </head>
 
 
-<body>
-    <div class="flex-container">
-        <header class="text-center">
-            <div class="row mt-2 mb-5 justify-content-center">
-                <div class="col-10 ">
-                    <h1 class="fw-bold mt-3">¿Dónde está Mi Bondi?</h1>
-                    <p class="fw-semibold">Versión suburbanos e interdepartamentales.</p>
+<body class="h-100">
+    <div class="container-fluid p-0 w-100" style="min-height: 100vh;">
+        <header class="text-center ">
+            <div class="d-flex justify-content-center barup">
+                <div class="align-self-center p-1">
+                    <img src="images/logo_225_transparent.png" height="50rem" alt="">
+                </div>
+                <div class="m-0 p-0 align-self-center">
+                    <h1 class="fw-bold m-0 p-0">¿Dónde está Mi Bondi?</h1>
+                    <!-- <p class="fw-semibold m-0 p-0 fs-6">Versión suburbanos e interdepartamentales.</p> -->
                 </div>
             </div>
+
         </header>
-        <section>
-            <div class="row justify-content-center">
+        <section class="shadow-top">
+            <div class="d-flex justify-content-center">
                 <br>
                 <div class="col-10 text-center">
                     <h2>¿Para que sirve esta página?</h2>
@@ -75,13 +79,12 @@
 
 
         </section>
-        <footer class="text-center">
-            <div class="h-auto">
+        <footer class="text-center pb-5 pt-3 px-4">
+            <div class="h-auto pl5 pr-5">
 
-
-                <p class="mt-5">En desarollo con &hearts; por <a
+                <p class="mt-1">En desarollo con &hearts; por <a
                         href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
-                <p>Version 0.0.4</p>
+                <p>Version 0.0.5</p>
 
             </div>
         </footer>
@@ -97,18 +100,18 @@
             </button>
             <div class="row justify-content-around text-center">
                 <div class="col-4 ">
-                    <div class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;" id="about_btn">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;" id="about_btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                         </svg>
-                    </div>
+                    </button>
 
                 </div>
                 <div class="col-4">
-                    <div class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
-                        id="routes_btn">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn" onclick="window.location.href='./routes.html'" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                             class="bi bi-sign-turn-right" viewBox="0 0 16 16">
                             <path
@@ -116,7 +119,7 @@
                             <path fill-rule="evenodd"
                                 d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z" />
                         </svg>
-                    </div>
+                    </button>
 
                 </div>
             </div>

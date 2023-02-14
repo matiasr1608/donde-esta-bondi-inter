@@ -1,4 +1,4 @@
-const websiteStaticCache = "donde_esta_mi_bus_V0.0.5.1"
+const websiteStaticCache = "donde_esta_mi_bus_V0.0.5.8"
 
 const assets = [
   "/",
@@ -8,6 +8,7 @@ const assets = [
 ]
 
 self.addEventListener("install", installEvent => {
+  self.skipWaiting() // dont wait and activate after installing 
   installEvent.waitUntil(
     caches.open(websiteStaticCache).then(cache => {
       cache.addAll(assets)
@@ -32,6 +33,7 @@ const deleteOldCaches = async () => {
   const keyList = await caches.keys();
   const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
   await Promise.all(cachesToDelete.map(deleteCache));
+  console.log("golaa")
 };
 
 self.addEventListener("activate", (event) => {
