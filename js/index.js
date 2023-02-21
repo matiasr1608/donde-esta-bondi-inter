@@ -10,7 +10,7 @@ var firstTime = true;  // to ckeck if it is the first time that searches or is i
 let timeOut = null;
 var selectedBus = null;
 var timerfollowBus = null;
-var selectedMarker =null;
+var selectedMarker = null;
 
 
 $(document).ready(function () {
@@ -62,6 +62,12 @@ $(document).ready(function () {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+    L.control.locate({
+        position:"bottomright",
+        strings: {
+            title: "Ubicarme."
+        }
+    }).addTo(map); // add button to locate
     //////////
     groupMarkers = L.featureGroup().addTo(map);
 
@@ -83,7 +89,7 @@ $(document).ready(function () {
     }
     updateDB();
 
-    
+
     //////alert
 
     // SEARCH BUTTON
@@ -190,7 +196,7 @@ $(document).ready(function () {
             destChecked.push(($(this).val()))
         })
         buesesChecked = buses.filter(bus => destChecked.includes(bus.properties.destinoDesc)) //
-        showBuses(buesesChecked,15);
+        showBuses(buesesChecked, 15);
 
     };
 
@@ -204,7 +210,7 @@ $(document).ready(function () {
         }).then(() => {
             busess.forEach((bus) => {
                 let btn_attr = null
-                if(timerfollowBus){ // if following a bus, the button of the pop up to follow a bus deactivated
+                if (timerfollowBus) { // if following a bus, the button of the pop up to follow a bus deactivated
                     btn_attr = "disabled"
                 }
                 const marker = L.marker(bus.geometry.coordinates) //removed reverse()
@@ -219,19 +225,19 @@ $(document).ready(function () {
             })
             groupMarkers.addTo(map);
             //new Promise((resolve) => {
-                bounds = null
-                bounds = groupMarkers.getBounds();
-             //   resolve()
+            bounds = null
+            bounds = groupMarkers.getBounds();
+            //   resolve()
             //}).then(() => {
-                
-                if (busess.length > 1) {
-                    map.fitBounds(bounds)
-                } else {
-                }
-                if(busess.length == 1){
-                    map.setView(busess[0].geometry.coordinates, zoom)
-                }
-           // }
+
+            if (busess.length > 1) {
+                map.fitBounds(bounds)
+            } else {
+            }
+            if (busess.length == 1) {
+                map.setView(busess[0].geometry.coordinates, zoom)
+            }
+            // }
             //)
             //$('.leaflet-marker-icon').on('click',(e)=>{saveSelectedBus(e)});
 
@@ -295,7 +301,7 @@ $(document).ready(function () {
     }
 
     $(document).on("click", ".seguiBus", function (e) {   //adds the events fot p tag that dosnt yet exists
-        if(!timerfollowBus){
+        if (!timerfollowBus) {
             followSelectedBus();  //only follow bus if there is a timer 
         }
         // selectedMarker._popup.setContent((`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${selectedBus[0].properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus" disabled>Siguiendo.</button> </div>

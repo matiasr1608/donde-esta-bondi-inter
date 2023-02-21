@@ -34,6 +34,8 @@
     <script src="./js/jquery-3.6.3.min.js"></script>
     <link rel="stylesheet" href="/css/custom_index.css">
     <script src="./js/index.js"></script>
+    <script src="./js/all.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -49,24 +51,28 @@
     <link rel="apple-touch-icon" href="images/logo_192_blue.png">
     <!-- fav icon -->
     <link rel="icon" type="image/x-icon" href="/images/logo_225_blue.png">
+    <!-- location plugin -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
 </head>
 
 <body>
     <div class="container-fluid p-0 w-100" >
-        <header class="text-center ">
-            <div class="d-flex justify-content-center barup">
-                <div class="align-self-center p-1">
-                    <img src="images/logo_225_transparent.png" height="50rem" alt="">
+        <header class="d-flex justify-content-center barup">
+            <!-- <div class=""> -->
+                <div class="align-self-center p-1" id="logo">
+                    <img src="images/logo_225_transparent.png" height="50rem" alt="" id="logo_img">
                 </div>
                 <div class="m-0 p-0 align-self-center">
-                    <h1 class="fw-bold m-0 p-0">¿Dónde está Mi Bondi?</h1>
+                    <h1 class="fw-bold m-0 p-0" id="text_title">¿Dónde está Mi Bondi?</h1>
                     <!-- <p class="fw-semibold m-0 p-0 fs-6">Versión suburbanos e interdepartamentales.</p> -->
                 </div>
-            </div>
+            <!-- </div> -->
 
         </header>
-        <section class="shadow-top">
-            <div class="d-flex justify-content-center">
+        <section class="shadow-top p-3">
+            <div class="d-flex justify-content-center"  style="margin-top:4rem" id="first_text">
                 <div class="col-10 mt-1 mb-4 p-2 text-center ">
                     <p class="">Ahora podés ubicar dónde está el ómnibus suburbano o interdepartamental para saber
                         cuánto demora! Por ejemplo los COPSA o CITA.</p>
