@@ -1,0 +1,17 @@
+{
+    "name": "¿Dónde está Mi Bondi?",
+    "short_name": "MiBondi",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#0462DC",
+    "orientation": "portrait-primary",
+    "icons": [{
+        "src": "images/logo_225_blue.png",
+        "type": "image/png", "sizes": "225x225"
+      },{
+        "src": "images/logo_512.png",
+        "type": "image/png", "sizes": "512x512", "purpose": "any maskable"
+      }
+    ]
+}
