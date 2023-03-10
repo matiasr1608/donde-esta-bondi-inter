@@ -1,7 +1,6 @@
 var height = null;
 import $ from "jquery";
 
-
 window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
@@ -12,8 +11,6 @@ window.onscroll = function () { scrollFunction() };
            $("header").css({"height": "2rem"});
         //    $("#text_title").css({"font-size": "calc(1.375rem + 1.5vw-1)"});
            $("#text_title").addClass("small");
-        
-
 
         } else {
            //$("#logo").fadeIn("slow")

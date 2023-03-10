@@ -1,6 +1,6 @@
 FROM node:19-alpine
 RUN apk --no-cache add git
-
+# RUN apt-get install git
 WORKDIR /usr/src/app
 
 COPY package*.json ./

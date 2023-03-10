@@ -4,7 +4,8 @@
   "description": "I'm developing this website because there isn't any in which you can locate buses that are not from Montevideo. On this page you can locate buses that pass between different municipalities. I'm using public information from Intendencia de Montevideo.",
   "main": "serviceWorker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -31,14 +32,16 @@
     "live-server": "^1.1.0",
     "lodash": "^4.17.21",
     "style-loader": "^3.3.1",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^10.0.0",
     "mini-css-extract-plugin": "^2.7.2",
     "purgecss-webpack-plugin": "^5.0.0",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.0",
     "webpack-assets-manifest": "^5.1.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }

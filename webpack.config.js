@@ -5,8 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const CompressionPlugin = require("compression-webpack-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
-const WebpackAssetsManifest = require('webpack-assets-manifest');
+// const WebpackAssetsManifest = require('webpack-assets-manifest');
 
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const PATHS = {
     src: path.join(__dirname, "src"),
@@ -32,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                use: [ MiniCssExtractPlugin.loader, "css-loader"], //MiniCssExtractPlugin.loader,
             },
             {
                 test: /\.(png|jpg)$/i,
@@ -41,18 +42,6 @@ module.exports = {
                     filename: 'images/[name][ext]'
                 }
             }
-            // {
-            //     test: /\.(gif|png|jpe?g)$/,
-            //     use: [
-            //       {
-            //         loader: 'file-loader',
-            //         options: {
-            //           name: '[name].[ext]',
-            //           outputPath: 'assets/images/'
-            //         }
-            //       }
-            //     ]
-            //   },
         ]
     },
     optimization: {
@@ -96,6 +85,12 @@ module.exports = {
                 safelist: {
                     deep: [/leaflet-/],
                 }
+              }),
+              new WorkboxPlugin.GenerateSW({
+                // these options encourage the ServiceWorkers to get in there fast
+                // and not allow any straggling "old" SWs to hang around
+                clientsClaim: true,
+                skipWaiting: true,
               }),
             new HtmlWebpackPlugin({
                 filename: 'index.html',
