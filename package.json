@@ -1,0 +1,30 @@
+{
+  "name": "buses_vit",
+  "version": "1.0.0",
+  "description": "Trying to use vite",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasr1608/donde-esta-bondi-inter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiasr1608/donde-esta-bondi-inter/issues"
+  },
+  "homepage": "https://github.com/matiasr1608/donde-esta-bondi-inter#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.4",
+    "leaflet": "^1.9.3",
+    "leaflet.locatecontrol": "^0.79.0",
+    "vite-plugin-pwa": "^0.14.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.3"
+  }
+}

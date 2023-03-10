@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+     <!-- Google adsense  -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9211148063872780"
+     crossorigin="anonymous"></script>
+ <!-- Google tag (gtag.js) -->
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHBZQF38H"></script>
+
+ <script>
+     var host = window.location.hostname;
+     if (host != "localhost") {
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+         gtag('config', 'G-0CHBZQF38H');
+     }
+ </script>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>MiBondi</title>
+ <meta name="description"
+     content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
+ <meta name="keywords"
+     content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste, horarios, omnibus, canelones, san josé, montevideo, satt" />
+
+ <script type="module" src="./js/routes.js"></script>
+ <script type="module" src="./js/all.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ <meta name="theme-color" content="#033d8a" />
+ <!-- link apple icon -->
+ <link rel="apple-touch-icon" href="images/logo_192_blue.png">
+ <!-- fav icon -->
+ <link rel="icon" type="image/x-icon" href="/images/logo_225_blue.png">
+</head>
+
+
+<body>
+    <div class="flex-container">
+        <header class="text-center ">
+            <div class="d-flex justify-content-center barup">
+                <div class="align-self-center p-1">
+                    <img src="images/logo_225_transparent.png" height="50rem" alt="" id="logo_img">
+                </div>
+                <div class="m-0 p-0 align-self-center">
+                    <h1 class="fw-bold m-0 p-0"  id="text_title">¿Dónde está Mi Bondi?</h1>
+                    <!-- <p class="fw-semibold m-0 p-0 fs-6">Versión suburbanos e interdepartamentales.</p> -->
+                </div>
+            </div>
+
+        </header>
+        <section class="shadow-top">
+            <div class="d-flex justify-content-center text-center top" id="first_text">
+                <h2>Buscá el recorrido de una linea suburbana:</h2>
+
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="mb-5 mt-2 justify-content-center text-center col-8" id="select_company">
+                    <p class="mb-0">Primero seleccioná la empresa:</p>
+                    <select class="form-select mb-2 primero" aria-label="Default select example" id="empresa">
+                        <option selected>Elija una opción: </option>
+                    </select>
+                    <p class="mb-0 segundo ">Luego seleccioná la línea: </p>
+                    <select class="form-select mb-2 segundo " aria-label="Default select example" id="linea" disabled>
+                    </select>
+                    <button type="button" class="btn btn-primary segundo mb-4" id="search" disabled>Buscar</button>
+                    <div id="alert_search">
+                    </div>
+                    <p class="tercero  mb-0 mt-1 fw-semibold" hidden>Elegí un destino:</p>
+                    <div class="tercero mt-1 align-self-center" id="switch_origen" hidden >
+
+                    </div>
+                    <p class=" tercero mt-1 mb-0 fw-semibold" hidden>Elegí un recorrido :</p>
+                    <div class="tercero mt-1 " id="switch_route" hidden>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-center pb-4">
+                <div class="d-flex col-10" id="map_routes" style="height: 30rem; z-index: 0">
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <footer class="text-center pb-5 pt-3 px-4">
+            <div class="h-auto pl-5 pr-5">
+                <p class="mb-0">Si te gusta el proyecto me podés comprar un <a href="https://mpago.la/2rD9qdS">cafecito
+                        &#9749;.</a></p>
+                <p class="fs-6 ">En desarollo con &hearts; por <a
+                        href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
+
+
+            </div>
+        </footer>
+        <div class="w-100 barra" style=" background-color: #0462DC;">
+            <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
+                onclick="window.location.href='./index.html'" style=" background-color: #0462DC;" id="map_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+            </button>
+            <div class="row justify-content-around text-center">
+                <div class="col-4 ">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;" id="about_btn" onclick="window.location.href='./about.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                    </button>
+
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-sign-turn-right-fill" viewBox="0 0 16 16">
+                            <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435ZM9 8.466V7H7.5A1.5 1.5 0 0 0 6 8.5V11H5V8.5A2.5 2.5 0 0 1 7.5 6H9V4.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L9.41 8.658A.25.25 0 0 1 9 8.466Z"/>
+                          </svg>
+                        </button>
+
+                </div>
+            </div>
+            <!-- <div>
+                
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
