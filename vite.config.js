@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 const path = require('path')
 
 export default {
+  base: './',
   root: path.resolve(__dirname, 'src'),
   resolve: {
     alias: {
@@ -24,7 +25,7 @@ export default {
   },
   publicDir: '../public',
   server: {
-    port: 8080,
+    port: 80,
     hot: true
   },
   plugins: [
