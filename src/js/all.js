@@ -22,7 +22,7 @@ window.onscroll = function () { scrollFunction() };
 
         } else {
            //$("#logo").fadeIn("slow")
-           console.log("hola")
+        //    console.log("hola")
 
            $("#logo_img").attr("height","50rem")
            //$("#logo").removeAttr("hidden")
