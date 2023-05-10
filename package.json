@@ -18,11 +18,13 @@
   "homepage": "https://github.com/matiasr1608/donde-esta-bondi-inter#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@types/workbox-window": "^5.0.0",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.4",
     "leaflet": "^1.9.3",
     "leaflet.locatecontrol": "^0.79.0",
-    "vite-plugin-pwa": "^0.14.4"
+    "vite-plugin-pwa": "^0.14.4",
+    "workbox-window": "^6.5.4"
   },
   "devDependencies": {
     "@rollup/plugin-inject": "^5.0.3"

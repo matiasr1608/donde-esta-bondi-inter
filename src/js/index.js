@@ -36,11 +36,36 @@ import busStopIcon from "../images/busstop.png"
 import busIconUrl from "../images/BusIcon.png"
 //import busIcon from "../images/BusIcon.png"
 
+import { Workbox } from 'workbox-window'
+import { registerSW } from 'virtual:pwa-register'
+registerSW({ reloadOnUpdate: true, immediate: true })
+
 
 // import "../serviceWorr.js"
-var casa = "vasina"
 $(document).ready(function () {
+    setTimeout(()=>{
+        // Check for a waiting Service Worker
+          console.log("enrtró")
+           navigator.serviceWorker.getRegistration().then(function(registration) {
+             if (registration.waiting) {
+               // There is a waiting Service Worker
+               if (confirm('Actualización disponible, ¿Desea actualizar la página?')) {
+                 // Activate the waiting Service Worker
+                 registration.waiting.postMessage({type: 'SKIP_WAITING'});
+               }
+             }
+           });
+         
+           // Add event listener for Service Worker updates
+           navigator.serviceWorker.addEventListener('controllerchange', function() {
+             // A new Service Worker has taken control of the page
+             // Reload the page to ensure all resources are updated
+             window.location.reload();
+           })}
+           ,10000)
+
     //service woerker
+    
     // if ("serviceWorker" in navigator) {
     //     window.addEventListener("load", function () {
     //         navigator.serviceWorker

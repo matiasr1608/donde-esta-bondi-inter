@@ -25,7 +25,7 @@ export default {
   },
   publicDir: '../public',
   server: {
-    port: 80,
+    port: 5501,
     hot: true
   },
   plugins: [
@@ -35,7 +35,8 @@ export default {
     }),
     //add the pwa and manifest
     VitePWA({
-      injectRegister: 'inline',
+      scope: '/',
+      injectRegister: 'script',
       registerType: 'autoUpdate',
       workbox: {
         cleanupOutdatedCaches: true
