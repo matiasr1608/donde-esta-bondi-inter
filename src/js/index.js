@@ -15,10 +15,6 @@ var timerfollowBus = null;
 var selectedMarker = null;
 let destinos = [];
 
-import { registerSW } from 'virtual:pwa-register'
-
-registerSW({ immediate: true })
-
 import $, { type } from "jquery";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
