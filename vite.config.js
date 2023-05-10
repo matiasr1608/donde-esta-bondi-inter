@@ -14,7 +14,7 @@ export default {
   },
   build: {
     emptyOutDir: true,
-    outDir: '../dist',
+    outDir: '../docs',
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'src/index.html'),

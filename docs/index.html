@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" class="w-100">
+
+<head>
+    <!-- Google adsense  -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9211148063872780"
+        crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHBZQF38H"></script>
+
+    <script>
+        var host = window.location.hostname;
+        if (host != "localhost") {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0CHBZQF38H');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiBondi</title>
+    <meta name="description"
+        content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
+    <meta name="keywords"
+        content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste, horarios, omnibus, canelones, san josé, montevideo, satt" />
+
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#033d8a" />
+    <!-- link apple icon -->
+    <link rel="apple-touch-icon" href="logo_192_blue.png">
+    <!-- fav icon -->
+    <link rel="icon" type="image/x-icon" href="logo_225_blue.png">
+    <!-- location plugin -->
+    <!-- <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"
+        charset="utf-8"></script> -->
+  <script type="module" crossorigin src="./assets/main-8ebe352f.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/all-f07a255b.js">
+  <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-170a7ece.js">
+  <link rel="stylesheet" href="./assets/all-db70d0f4.css">
+  <link rel="stylesheet" href="./assets/L.Control-3c32fa88.css">
+<link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:inline-sw">if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('./sw.js', { scope: './' })})}</script></head>
+
+<body>
+    <div class="container-fluid p-0 w-100">
+        <header class="d-flex justify-content-center barup">
+            <!-- <div class=""> -->
+            <div class="align-self-center p-1" id="logo">
+                <img src="./assets/logo_225_transparent-ab0c1d59.png" height="50rem" alt="" id="logo_img">
+            </div>
+            <div class="m-0 p-0 align-self-center">
+                <h1 class="fw-bold m-0 p-0" id="text_title">¿Dónde está Mi Bondi?</h1>
+                <!-- <p class="fw-semibold m-0 p-0 fs-6">Versión suburbanos e interdepartamentales.</p> -->
+            </div>
+            <!-- </div> -->
+
+        </header>
+        <section class="shadow-top p-3">
+            <div class="d-flex justify-content-center" style="margin-top:4rem" id="first_text">
+                <div class="col-10 mt-1 mb-4 p-2 text-center ">
+                    <p class="">Ahora podés ubicar dónde está el ómnibus suburbano o interdepartamental para saber
+                        cuánto demora! Por ejemplo los COPSA o CITA.</p>
+                    <hr>
+
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div class="col-8 text-center">
+                    <div id="select_company">
+                        <p class="mb-0">Primero seleccioná la empresa:</p>
+                        <select class="form-select mb-2 primero" aria-label="Default select example" id="empresa">
+                            <option selected>Elija una opción: </option>
+                        </select>
+                        <p class="mb-0 segundo ">Luego seleccioná la línea: </p>
+                        <select class="form-select mb-2 segundo " aria-label="Default select example" id="linea"
+                            disabled>
+                        </select>
+                        <button type="button" class="btn btn-primary segundo mb-4" id="search" disabled>Buscar</button>
+                        <div id="alert_tiempo">
+                        </div>
+                        <p class="tercero " hidden>Podés volver a actualizar todas las veces que quieras, incluso
+                            luego de seleccionar el destino.</p>
+                        <hr class="tercero " hidden>
+                        <p class="tercero  mb-0 fw-semibold" hidden>Seleccioná el destino:</p>
+                        <div class="mt-1" id="switch_destinations">
+
+                        </div>
+                    </div>
+
+                    <div id="alert_follow">
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="fs-6 fst-italic mb-0">Cliqueá sobre el bondi por más información!</p>
+
+            </div>
+            <div class="d-flex justify-content-center pb-4">
+                <div class="d-flex col-10" id="map" style="height: 30rem; z-index: 0">
+
+                </div>
+            </div>
+
+
+
+
+        </section>
+        <footer class="text-center pb-5 pt-3 px-4">
+            
+            <div class="h-auto pl-5 pr-5">
+                <p class="mt-3">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
+                        disabled>Aquí</button> </p>
+                <p class="mb-0">Si te gusta el proyecto me podés comprar un <a href="https://mpago.la/2rD9qdS">cafecito
+                        &#9749;.</a></p>
+                <p class="fs-6 ">En desarollo con &hearts; por <a
+                        href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
+            </div>
+        </footer>
+        <div class="w-100 barra" style=" background-color: #0462DC;">
+            <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
+                onclick="window.location.href='#map'" style=" background-color: #0462DC;" id="map_btn"
+                aria-label="Show Map">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+            </button>
+            <div class="row justify-content-around text-center">
+                <div class="col-4 ">
+                    <button class="btn btn-primary-outline boton-barra" onclick="window.location.href='./about.html'"
+                        style=" background-color: #0462DC;" id="about_btn" aria-label="Show About page">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                            class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                    </button>
+
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn" aria-label="Show routes" onclick="window.location.href='./routes.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                            class="bi bi-sign-turn-right" viewBox="0 0 16 16">
+                            <path
+                                d="M5 8.5A2.5 2.5 0 0 1 7.5 6H9V4.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L9.41 8.658A.25.25 0 0 1 9 8.466V7H7.5A1.5 1.5 0 0 0 6 8.5V11H5V8.5Z" />
+                            <path fill-rule="evenodd"
+                                d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Como instalar la app?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Si tenés un Iphone:</h3>
+                    <p>Primero cliqueá en:</p>
+                    <img src="./assets/iphone_1-668d3a5a.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <p>Y luego en:</p>
+                    <img src="./assets/iphone_2-5b47ca8b.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <hr>
+                    <h3>Si tenés un dispositivo con Android:</h3>
+                    <p>Primero cliqueá en los 3 puntitos (puede variar la ubicación dependiendo del navegador):</p>
+                    <img src="./assets/android_1-fd58e082.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <p>Luego haz click en "Instalar aplicación"</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
