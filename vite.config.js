@@ -37,6 +37,9 @@ export default {
     VitePWA({
       injectRegister: 'inline',
       registerType: 'autoUpdate',
+      workbox: {
+        cleanupOutdatedCaches: true
+      },
       //includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       includeAssets: [
         '/*.png'
