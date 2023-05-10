@@ -17,6 +17,7 @@ let destinos = [];
 
 import $, { type } from "jquery";
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/custom_index.css'
 
