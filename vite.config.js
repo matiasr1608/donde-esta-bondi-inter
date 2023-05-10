@@ -35,7 +35,8 @@ export default {
     }),
     //add the pwa and manifest
     VitePWA({
-      injectRegister: 'inline',
+      scope: '/',
+      injectRegister: 'script',
       registerType: 'autoUpdate',
       //includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       includeAssets: [
