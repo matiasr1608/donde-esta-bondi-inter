@@ -35,6 +35,7 @@ export default {
     }),
     //add the pwa and manifest
     VitePWA({
+      filename:'serviceWorker.js',
       scope: '/',
       injectRegister: 'script',
       registerType: 'autoUpdate',
