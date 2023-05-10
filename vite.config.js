@@ -25,7 +25,7 @@ export default {
   },
   publicDir: '../public',
   server: {
-    port: 80,
+    port: 5501,
     hot: true
   },
   plugins: [
