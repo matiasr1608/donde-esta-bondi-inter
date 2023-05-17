@@ -3,7 +3,7 @@ var height = null;
 import $ from "jquery";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/custom_index.css'
+import '../css/custom_index_.css'
 
 import * as bootstrap from 'bootstrap';
 

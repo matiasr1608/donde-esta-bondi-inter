@@ -15,7 +15,10 @@
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
+            ////////
+
             gtag('config', 'G-0CHBZQF38H');
+
         }
     </script>
     <meta charset="UTF-8">
@@ -34,18 +37,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="#033d8a" />
     <!-- link apple icon -->
-    <link rel="apple-touch-icon" href="logo_192_blue.png">
+    <link rel="apple-touch-icon" href="./assets/logo_192_blue-46e6c013.png">
     <!-- fav icon -->
-    <link rel="icon" type="image/x-icon" href="logo_225_blue.png">
+    <link rel="icon" type="image/x-icon" href="./assets/logo_225_blue-0616ae2f.png">
     <!-- location plugin -->
     <!-- <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"
         charset="utf-8"></script> -->
-  <script type="module" crossorigin src="./assets/main-60296537.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/for_all-9d723cd2.js">
-  <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-bcb63262.js">
-  <link rel="stylesheet" href="./assets/for_all-db70d0f4.css">
+  <script type="module" crossorigin src="./assets/main-cb8bc7f0.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/for_all-16d9e570.js">
+  <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-ca1a41dd.js">
+  <link rel="stylesheet" href="./assets/for_all-f752904f.css">
   <link rel="stylesheet" href="./assets/L.Control-3c32fa88.css">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 
@@ -64,6 +67,7 @@
 
         </header>
         <section class="shadow-top p-3">
+
             <div class="d-flex justify-content-center" style="margin-top:4rem" id="first_text">
                 <div class="col-10 mt-1 mb-4 p-2 text-center ">
                     <p class="">Ahora podés ubicar dónde está el ómnibus suburbano o interdepartamental para saber
@@ -72,6 +76,18 @@
 
                 </div>
             </div>
+            <div class="d-flex justify-content-center d-none" id="fav_lines_box">
+                 <div class="col-10 text-center mb-4">
+                    <p class="fw-bold mb-0">Líneas favoritas:</p>
+                    
+                    <span id="fav_lines" c></span>
+                 </div>
+               
+            </div>
+            <!-- <button type="button" class="btn btn-danger delete-button">
+                Delete Button
+                <span aria-hidden="true" class="close" data-dismiss="alert">&times;</span>
+            </button> -->
 
             <div class="d-flex justify-content-center">
                 <div class="col-8 text-center">
@@ -81,10 +97,27 @@
                             <option selected>Elija una opción: </option>
                         </select>
                         <p class="mb-0 segundo ">Luego seleccioná la línea: </p>
-                        <select class="form-select mb-2 segundo " aria-label="Default select example" id="linea"
-                            disabled>
-                        </select>
+
+                        <div class="input-group  d-flex align-items-center mb-2">
+                            <select class="form-select segundo " aria-label="Default select example" id="linea"
+                                disabled>
+                            </select>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary  d-flex align-items-center ms-2 segundo" id="add_fav" disabled>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-star" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+
+                        </div>
+
+
                         <button type="button" class="btn btn-primary segundo mb-4" id="search" disabled>Buscar</button>
+
                         <div id="alert_tiempo">
                         </div>
                         <p class="tercero " hidden>Podés volver a actualizar todas las veces que quieras, incluso
@@ -96,11 +129,16 @@
                         </div>
                     </div>
 
-                    <div id="alert_follow">
-                    </div>
+
 
                 </div>
+
             </div>
+            <div class="d-flex justify-content-center">
+                <div class="col-10 mt-2" id="alert_follow">
+                </div>
+            </div>
+
             <div class="text-center">
                 <p class="fs-6 fst-italic mb-0">Cliqueá sobre el bondi por más información!</p>
 
@@ -116,7 +154,7 @@
 
         </section>
         <footer class="text-center pb-5 pt-3 px-4">
-            
+
             <div class="h-auto pl-5 pr-5">
                 <p class="mt-3">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
                         disabled>Aquí</button> </p>
@@ -130,8 +168,8 @@
             <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
                 onclick="window.location.href='#map'" style=" background-color: #0462DC;" id="map_btn"
                 aria-label="Show Map">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-geo-alt-fill"
+                    viewBox="0 0 16 16">
                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                 </svg>
             </button>
@@ -195,8 +233,35 @@
         </div>
     </div>
     </div>
+    <div class="modal fade" tabindex="-1" id="modal_whats_new">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">¿Que hay de nuevo? 0.0.8</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Ahora podés guardar tus lineas favoritas! Luego de añadirla pulsando la estrella&#11088; podrás pulsar sobre la línea y obtener los bondis rapidaménte.</li>
+                    <li class="list-group-item">Rutas del Norte ahora está disponible!	&#128652;</li>
+                  </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="close_modal_new">Cerrar y no volver a mostrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
+    <script>
+        let displayMode = "browser"
+        const mqStandAlone = '(display-mode: standalone)';
+        if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
+            displayMode = 'standalone';
+        }
+        gtag('event', 'display_mode', { displayMode });
+    </script>
 
 </body>
 

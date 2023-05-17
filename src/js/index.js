@@ -1,7 +1,7 @@
 // const { cssNumber } = require("jquery");
 // const DENO_URL = 'backend.matiasrolando.com'
 const DENO_URL = 'https://backend.matiasrolando.com'
-var lineas = { 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702","702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L15', 'L2', 'L20', 'L22', 'L26', 'L28', 'L3', 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', 'L12', 'L31', 'L33', 'U11C', 'XA1'], 80: [] }
+var lineas = { 41: ['R1', 'R2', 'R10', 'R11', 'R12', 'R14', 'R15', 'R16', 'R17', 'R20', 'R24', 'R25'], 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702", "702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L15', 'L2', 'L20', 'L22', 'L26', 'L28', 'L3', 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', 'L12', 'L31', 'L33', 'U11C', 'XA1'], 80: [] }
 var buses = null;
 // var window.mapita = null;
 var groupMarkers = null;
@@ -19,7 +19,7 @@ import $, { type } from "jquery";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/custom_index.css'
+import '../css/custom_index_.css'
 
 import * as bootstrap from 'bootstrap';
 
@@ -40,29 +40,31 @@ registerSW({ reloadOnUpdate: true, immediate: true })
 
 // import "../serviceWorr.js"
 $(document).ready(function () {
-    setTimeout(()=>{
+
+    setTimeout(() => {
         // Check for a waiting Service Worker
-          console.log("enrtró")
-           navigator.serviceWorker.getRegistration().then(function(registration) {
-             if (registration.waiting) {
-               // There is a waiting Service Worker
-               if (confirm('Actualización disponible, ¿Desea actualizar la página?')) {
-                 // Activate the waiting Service Worker
-                 registration.waiting.postMessage({type: 'SKIP_WAITING'});
-               }
-             }
-           });
-         
-           // Add event listener for Service Worker updates
-           navigator.serviceWorker.addEventListener('controllerchange', function() {
-             // A new Service Worker has taken control of the page
-             // Reload the page to ensure all resources are updated
-             window.location.reload();
-           })}
-           ,10000)
+        console.log("enrtró")
+        navigator.serviceWorker.getRegistration().then(function (registration) {
+            if (registration.waiting) {
+                // There is a waiting Service Worker
+                if (confirm('Actualización disponible, ¿Desea actualizar la página?')) {
+                    // Activate the waiting Service Worker
+                    registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                }
+            }
+        });
+
+        // Add event listener for Service Worker updates
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+            // A new Service Worker has taken control of the page
+            // Reload the page to ensure all resources are updated
+            window.location.reload();
+        })
+    }
+        , 10000)
 
     //service woerker
-    
+
     // if ("serviceWorker" in navigator) {
     //     window.addEventListener("load", function () {
     //         navigator.serviceWorker
@@ -277,11 +279,11 @@ $(document).ready(function () {
             }
         }
         ajaxSearchBuses(empresa, e.currentTarget.innerText)
+
         console.log(empresa)
-        $("#empresa").val(empresa)
-        $(".segundo").removeAttr("disabled");
-        $("#linea").empty()
-        $("#linea").append('<option value=' + e.currentTarget.innerText + '>' + e.currentTarget.innerText + '</option>')
+        setCurrentLine(e.currentTarget.innerText, empresa)
+        gtag('event', 'searched_bus_by_stop', { "empresa": empresa, "linea": e.currentTarget.innerText });
+
     }
 
     const findTileInfo = async (tile) => {
@@ -374,6 +376,13 @@ $(document).ready(function () {
     // pbuscaresecuadrado(){
 
     // }
+    const setCurrentLine = (line, empresa) => {  // to change the select text to the line watching
+        $("#empresa").val(empresa)
+        $(".segundo").removeAttr("disabled");
+        $("#linea").empty()
+        $("#linea").append('<option value=' + line + '>' + line + '</option>')
+    }
+
 
     const addStops = () => {
         if (window.mapita.getZoom() >= 15) {
@@ -416,6 +425,7 @@ $(document).ready(function () {
     $("#search").click(async () => {
         if (firstTime) {
             ajaxSearchBuses($("#empresa").val(), $("#linea").val())
+            gtag('event', 'searched_bus', { "empresa": $("#empresa").val(), "linea": $("#linea").val() });
             // console.log("hola hola")
         } else {
             if (!timeOut) {
@@ -463,7 +473,7 @@ $(document).ready(function () {
 
 
             $("#alert_tiempo").empty();
-            if (((Date.now() - response.lastUpdateDB) >= 20000)) {
+            if (((Date.now() - response.lastUpdateDB) >= 25000)) {
                 $("#alert_tiempo").empty()
                     .append('<div class="alert alert-warning alert-dismissible fade show" role="alert">Las ubicaciones no están actualizadas, intente actualizar nuevamente en unos segundos. (diferencia ' + (Date.now() - response.lastUpdateDB) / 1000 + 'segundos)<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
                 console.log("mas de 20 seg");
@@ -471,11 +481,14 @@ $(document).ready(function () {
                 $("#search").addClass('disabled');
                 $("#search").html("Espere")
                 setTimeout(function () { $("#search").removeClass('disabled'); $("#search").html("Actualizar") }, 5000)
+                $("#select_company")[0].scrollIntoView()
 
+
+            }else{
+                $("#map")[0].scrollIntoView()
             }
             // $(".tercero").removeClass("invisible")
             $(".tercero").removeAttr("hidden")
-            $("#select_company")[0].scrollIntoView()
 
         } else {
             $("#alert_tiempo").empty()
@@ -528,7 +541,8 @@ $(document).ready(function () {
             resolve();
         }).then(() => {
             busess.forEach((bus) => {
-                let btn_attr = null
+                if(isInside(bus.geometry.coordinates)){
+                    let btn_attr = null
                 if (timerfollowBus) { // if following a bus, the button of the pop up to follow a bus deactivated
                     btn_attr = "disabled"
                 }
@@ -541,6 +555,10 @@ $(document).ready(function () {
                 markers.push(marker)
                 marker.addTo(groupMarkers)
                 bus.marker_id = groupMarkers.getLayerId(marker)   // vinculate each bus to a marker in the map
+                }else{
+                    console.log("Un bondi estaba fuera de uruguay")
+                }
+                
             })
             groupMarkers.addTo(window.mapita);
             //new Promise((resolve) => {
@@ -564,6 +582,40 @@ $(document).ready(function () {
     }
 
 
+    const isInside= (point)=> {// check if the bus is inside the metropolitan area
+        // ray-casting algorithm based on
+        // https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
+       const vs =[[
+            -57.0416736,
+            -33.9114244
+          ],
+          [
+            -57.0636507,
+            -35.1291316
+          ],
+          [
+            -54.9703315,
+            -35.2009977
+          ],
+          [
+            -55.01978,
+            -33.9843498
+          ]];
+
+        var x = point[1], y = point[0];//changed this
+        
+        var inside = false;
+        for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+            var xi = vs[i][0], yi = vs[i][1];
+            var xj = vs[j][0], yj = vs[j][1];
+            
+            var intersect = ((yi > y) != (yj > y))
+                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+            if (intersect) inside = !inside;
+        }
+        
+        return inside;
+    };
 
     $("#empresa").change(function () {
         firstTime = true
@@ -572,7 +624,7 @@ $(document).ready(function () {
         $(".segundo").removeAttr("disabled");
         $("#linea").empty()
         lineas[empresa].forEach(i => {
-            $("#linea").append('<option value=' + i + '>' + i + '</option>')
+            $("#linea").append(`<option value=${i}>  ${i} </option>`)
         });
     })
     $("#linea").change(() => {
@@ -645,6 +697,88 @@ $(document).ready(function () {
             }
         )
     }
+    ////// FAVOURITES
+    const hola = () => {
+        console.log(hola)
+    }
+    const displayFavedLines = () => {
+        $("#fav_lines").empty()
+        if (savedLines.length > 0) {
+            $("#fav_lines_box").removeClass("d-none")
+            savedLines.forEach((line) => {
+                $("#fav_lines").append(` 
+                    <button type="button" class="btn btn-primary btn-sm " id="button_line_${line}" value=${line}>
+                    ${line}
+                    <span aria-hidden="true" class="close" data-dismiss="alert" id="span_${line}">&times;</span>
+                </button>`
+                )
+                $(`#span_${line}`).on("click", (e) => {
+                    e.currentTarget.parentElement.remove()
+                    removeLineFav(line)
+                    if (savedLines.length == 0) {
+                        $("#fav_lines_box").addClass("d-none")
+                    }
+                })
+                $(`#button_line_${line}`).on("click", (e) => {
+                    firstTime = true
+                    let empresa = null
+                    for (let key in lineas) {
+                        if (lineas[key].indexOf(e.currentTarget.value) !== -1) {
+                            empresa = key
+                        }
+                    }
+                    console.log(empresa, e.currentTarget.value)
+                    ajaxSearchBuses(empresa, e.currentTarget.value)
+                    setCurrentLine(e.currentTarget.value, empresa)
+                })
+            })
+        }
+    }
+
+    let jsonFavedLines = window.localStorage.getItem("favedLines") // get the saved lines from kocal storage
+    let savedLines = null
+    if (jsonFavedLines === null) {
+        savedLines = []
+    } else {
+        savedLines = JSON.parse(jsonFavedLines)
+        displayFavedLines()
+    }
+
+
+    const removeLineFav = (line) => {
+        const index = savedLines.indexOf(line);
+        if (index > -1) { // only splice array when item is found
+            savedLines.splice(index, 1); // 2nd parameter means remove one item only
+        }
+        window.localStorage.setItem("favedLines", JSON.stringify(savedLines));
+    }
+
+    const addLineFav = () => {
+        let linea = $("#linea").val();
+        if (!savedLines.includes(linea)) {
+            savedLines.push(linea)
+            window.localStorage.setItem("favedLines", JSON.stringify(savedLines));
+        }
+        displayFavedLines()
+    }
+
+
+
+    $("#add_fav").on("click", addLineFav)
+
+    //////////////////////MODAL WHATS NEW
+    let showModal = window.localStorage.getItem("showModalVersion")
+    const myModal = new bootstrap.Modal($("#modal_whats_new"));
+    console.log(showModal,JSON.parse(showModal))
+    if(showModal==null || JSON.parse(showModal) != "0.0.8"){
+        myModal.show()
+    }
+
+    $("#close_modal_new").on("click",()=>{
+        myModal.hide()
+
+        window.localStorage.setItem("showModalVersion",JSON.stringify("0.0.8"))
+    })
 
     let empresas = [
         {
@@ -692,6 +826,9 @@ $(document).ready(function () {
         {
             codigo: '39',
             descripcion: 'ZEBALLOS HERMANOS'
+        }, {
+            codigo: '41',
+            descripcion: 'RUTAS DEL NORTE'
         },
 
 

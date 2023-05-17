@@ -8,7 +8,7 @@ var lineas = { 10: ['2', '222', '402', '404', '405', '407', '409', '427', '456',
 import $ from "jquery";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/custom_index.css'
+import '../css/custom_index_.css'
 
 import * as bootstrap from 'bootstrap';
 
