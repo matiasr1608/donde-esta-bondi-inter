@@ -19,7 +19,9 @@ export default {
       input: {
         main: path.resolve(__dirname, 'src/index.html'),
         about: path.resolve(__dirname, 'src/about.html'),
-        routes: path.resolve(__dirname, 'src/routes.html')
+        routes: path.resolve(__dirname, 'src/routes.html'),
+        terms: path.resolve(__dirname, 'src/terms.html'),
+        privacy: path.resolve(__dirname, 'src/privacy_police.html')
       },
     },
   },

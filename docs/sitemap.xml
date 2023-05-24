@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8"?>
+<?xml version="1.2" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mibondi.com/index.html</loc>
@@ -10,6 +10,14 @@
   </url>
    <url>
     <loc>https://mibondi.com/routes.html</loc>
+    <lastmod>2023-05-15T04:12:20+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mibondi.com/terms.html</loc>
+    <lastmod>2023-05-15T04:12:20+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mibondi.com/privacy_police.html</loc>
     <lastmod>2023-05-15T04:12:20+00:00</lastmod>
   </url>
 </urlset>

@@ -21,13 +21,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiBondi</title>
+    <title>Información | MiBondi</title>
     <meta name="description"
-        content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
+        content="Con esta página podés ubicar y seguir ómnibus del Sistema de Transporte Metropolitano (STM), además podés tener líneas favoritas y ver recorridos." />
     <meta name="keywords"
         content="ubiación omnibus, horarios bondi, ubiación bondi, stm, copsa, cita, codeleste, horarios, omnibus, canelones, san josé, montevideo, satt" />
 
-    
+   
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -36,7 +36,7 @@
     <link rel="apple-touch-icon" href="./assets/logo_192_blue-46e6c013.png">
     <!-- fav icon -->
     <link rel="icon" type="image/x-icon" href="./assets/logo_225_blue-0616ae2f.png">
-  <script type="module" crossorigin src="./assets/for_all-16d9e570.js"></script>
+  <script type="module" crossorigin src="./assets/for_all-75f931ed.js"></script>
   <link rel="stylesheet" href="./assets/for_all-f752904f.css">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 
@@ -61,9 +61,11 @@
                 <div class="col-10 text-center">
                     <h2>¿Para que sirve esta página?</h2>
                     <p>Está pensada para poder encontrar en el mapa los ómnibus adheridos al Sistema de Transporte
-                        Metropolitano que no aparecen en otros sitios.</p>
-                    <p>La idea es agregar otras funcionalidades como calcular el tiempo de llegada a las paradas y ver
-                        los recorridos de los coches.</p>
+                        Metropolitano que no aparecen en otros sitios, cómo lo son los suburbanos. Podés ubicarlos buscando por empresa y luego la lína o podés hacer 
+                    zoom y buscar por parada.</p>
+                    <p>También podés agregar líneas a favoritos para tener un rápido acceso a las ubicaciones de los bondis de dicha línea.</p>
+
+                    <p>La idea es agregar otras funcionalidades como calcular el tiempo de llegada a las paradas y poder separar pos ómnibus por tipo de lina, ya sea común o directo.</p>
                     <br>
                     <h2>¿Qué ómnibus se pueden ubicar?</h2>
                     <p>Todos los que se reporten al sistema y se pueda pagar con la STM, eso incluye entre otras a
@@ -80,37 +82,38 @@
         <footer class="text-center pb-5 pt-3 px-4">
             <div class="h-auto pl5 pr-5">
 
-                <p class="mt-1">En desarollo con &hearts; por <a
+                <p class="mt-1">Desarrollado con &hearts; por <a
                         href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
                 <p>Versión 0.0.8</p>
+                <p><a style="text-decoration:none;" href="terms.html">Términos y Condiciones</a> | <a style="text-decoration:none;" href="privacy_police.html"> Política de Privacidad</a></p>
+
 
             </div>
         </footer>
         <div class="w-100 barra" style=" background-color: #0462DC;">
-            <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
-                onclick="window.location.href='./index.html'" style=" background-color: #0462DC;" id="map_btn">
+            <a class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle" href="index.html" style=" background-color: #0462DC;" id="map_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-geo-alt"
                     viewBox="0 0 16 16">
                     <path
                         d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
                     <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 </svg>
-            </button>
+            </a>
             <div class="row justify-content-around text-center">
                 <div class="col-4 ">
-                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                    <a class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
                         id="about_btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                             class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                             <path
                                 d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                         </svg>
-                    </button>
+                    </a>
 
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
-                        id="routes_btn" onclick="window.location.href='./routes.html'">
+                    <a class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn" href="routes.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                             class="bi bi-sign-turn-right" viewBox="0 0 16 16">
                             <path
@@ -118,7 +121,7 @@
                             <path fill-rule="evenodd"
                                 d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z" />
                         </svg>
-                    </button>
+                    </a>
 
                 </div>
             </div>

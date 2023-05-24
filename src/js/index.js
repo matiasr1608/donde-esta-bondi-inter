@@ -1,7 +1,7 @@
 // const { cssNumber } = require("jquery");
 // const DENO_URL = 'backend.matiasrolando.com'
 const DENO_URL = 'https://backend.matiasrolando.com'
-var lineas = { 41: ['R1', 'R2', 'R10', 'R11', 'R12', 'R14', 'R15', 'R16', 'R17', 'R20', 'R24', 'R25'], 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702", "702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L15', 'L2', 'L20', 'L22', 'L26', 'L28', 'L3', 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', 'L12', 'L31', 'L33', 'U11C', 'XA1'], 80: [] }
+var lineas = { 41: ['R1', 'R2', 'R10', 'R11', 'R12', 'R14', 'R15', 'R16', 'R17', 'R20', 'R24', 'R25'], 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', "L13", 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702", "702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '103SD', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', "124 SD", '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', "169 SD", '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '60 SD', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L112', 'L15', "L17", "L18", "L19", 'L2', 'L20', 'L22', "L23", 'L26', "L27", 'L28', 'L3', "L30", "L31", "L34", 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', "UAM1", "LM13", 'L12', 'L31', "L32", 'L33', "PB", 'U11C', "U11S", "U11T", "8SR", 'XA1'], 80: [] }
 var buses = null;
 // var window.mapita = null;
 var groupMarkers = null;
@@ -19,6 +19,7 @@ import $, { type } from "jquery";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../css/custom_index_.css'
 
 import * as bootstrap from 'bootstrap';
@@ -85,7 +86,41 @@ $(document).ready(function () {
     function eventHandler(event) {
         beforeInstallPrompt = event;
         document.getElementById("pwa_btn").removeAttribute("disabled");
+        document.getElementById("pwa_btn2").removeAttribute("disabled");
+
     }
+    function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
+        }
+
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
+
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
+
+        if (/Windows/i.test(userAgent)) {
+            return 'Windows';
+        } else if (/Macintosh|MacIntel|MacPPC|Mac68K/i.test(userAgent)) {
+            return 'Mac';
+        } else if (/Linux/i.test(userAgent)) {
+            return 'Linux';
+        }
+        return "nosesabe"
+    }
+
+
+    window.addEventListener('appinstalled', () => {
+        let eventName = "installed_app_from_"+getMobileOperatingSystem()
+        gtag("event", eventName)
+    });
 
     function errorHandler(event) {
         console.log("error: " + event);
@@ -94,7 +129,9 @@ $(document).ready(function () {
     $("#pwa_btn").click(() => {
         if (beforeInstallPrompt) { beforeInstallPrompt.prompt() };
     })
-
+    $("#pwa_btn2").on("click", () => {
+        if (beforeInstallPrompt) { beforeInstallPrompt.prompt() };
+    })
     //button to show modal if there isnt an event
     setTimeout(() => {
         if (!beforeInstallPrompt) {
@@ -102,6 +139,9 @@ $(document).ready(function () {
             $("#pwa_btn").attr('data-bs-toggle', "modal")
             $("#pwa_btn").attr("data-bs-target", "#exampleModal")
 
+            document.getElementById("pwa_btn2").removeAttribute("disabled");
+            $("#pwa_btn2").attr('data-bs-toggle', "modal")
+            $("#pwa_btn2").attr("data-bs-target", "#exampleModal")
         }
     }, 1000)
 
@@ -484,7 +524,7 @@ $(document).ready(function () {
                 $("#select_company")[0].scrollIntoView()
 
 
-            }else{
+            } else {
                 $("#map")[0].scrollIntoView()
             }
             // $(".tercero").removeClass("invisible")
@@ -541,24 +581,24 @@ $(document).ready(function () {
             resolve();
         }).then(() => {
             busess.forEach((bus) => {
-                if(isInside(bus.geometry.coordinates)){
+                if (isInside(bus.geometry.coordinates)) {
                     let btn_attr = null
-                if (timerfollowBus) { // if following a bus, the button of the pop up to follow a bus deactivated
-                    btn_attr = "disabled"
-                }
-                const marker = L.marker(bus.geometry.coordinates, { icon: busIcon }) //removed reverse()
-                marker.bindPopup(`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${bus.properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus" ${btn_attr}>Seguí tu bondi</button> </div>
+                    if (timerfollowBus) { // if following a bus, the button of the pop up to follow a bus deactivated
+                        btn_attr = "disabled"
+                    }
+                    const marker = L.marker(bus.geometry.coordinates, { icon: busIcon }) //removed reverse()
+                    marker.bindPopup(`<div style="display: flex; justify-content: space-between;"> <p class="mb-0 mt-0 fs-6 fw-bold"><b>${bus.properties.linea} </b> </p>       <button class= "mt-0 mb-0 btn btn-outline-primary btn-sm fw-bold seguiBus" ${btn_attr}>Seguí tu bondi</button> </div>
                 </br>Destino: ${bus.properties.destinoDesc} </br>
                  Tipo: ${bus.properties.sublinea}`)
-                    .on("click", saveSelectedBus)
-                // marker.addTo(map)
-                markers.push(marker)
-                marker.addTo(groupMarkers)
-                bus.marker_id = groupMarkers.getLayerId(marker)   // vinculate each bus to a marker in the map
-                }else{
+                        .on("click", saveSelectedBus)
+                    // marker.addTo(map)
+                    markers.push(marker)
+                    marker.addTo(groupMarkers)
+                    bus.marker_id = groupMarkers.getLayerId(marker)   // vinculate each bus to a marker in the map
+                } else {
                     console.log("Un bondi estaba fuera de uruguay")
                 }
-                
+
             })
             groupMarkers.addTo(window.mapita);
             //new Promise((resolve) => {
@@ -582,38 +622,38 @@ $(document).ready(function () {
     }
 
 
-    const isInside= (point)=> {// check if the bus is inside the metropolitan area
+    const isInside = (point) => {// check if the bus is inside the metropolitan area
         // ray-casting algorithm based on
         // https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
-       const vs =[[
+        const vs = [[
             -57.0416736,
             -33.9114244
-          ],
-          [
+        ],
+        [
             -57.0636507,
             -35.1291316
-          ],
-          [
+        ],
+        [
             -54.9703315,
             -35.2009977
-          ],
-          [
+        ],
+        [
             -55.01978,
             -33.9843498
-          ]];
+        ]];
 
         var x = point[1], y = point[0];//changed this
-        
+
         var inside = false;
         for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
             var xi = vs[i][0], yi = vs[i][1];
             var xj = vs[j][0], yj = vs[j][1];
-            
+
             var intersect = ((yi > y) != (yj > y))
                 && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
             if (intersect) inside = !inside;
         }
-        
+
         return inside;
     };
 
@@ -769,15 +809,15 @@ $(document).ready(function () {
     //////////////////////MODAL WHATS NEW
     let showModal = window.localStorage.getItem("showModalVersion")
     const myModal = new bootstrap.Modal($("#modal_whats_new"));
-    console.log(showModal,JSON.parse(showModal))
-    if(showModal==null || JSON.parse(showModal) != "0.0.8"){
+    console.log(showModal, JSON.parse(showModal))
+    if (showModal == null || JSON.parse(showModal) != "0.0.8.1") {
         myModal.show()
     }
 
-    $("#close_modal_new").on("click",()=>{
+    $("#close_modal_new").on("click", () => {
         myModal.hide()
 
-        window.localStorage.setItem("showModalVersion",JSON.stringify("0.0.8"))
+        window.localStorage.setItem("showModalVersion", JSON.stringify("0.0.8.1"))
     })
 
     let empresas = [

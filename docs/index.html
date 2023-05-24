@@ -24,7 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiBondi</title>
+    <title>MiBondi | ¿Dónde está Mi Bondi?</title>
     <meta name="description"
         content="Ubicá en tiempo real a tu ómnibus del Sistema de Transporte Metropolitano, especialmente los suburbanos e interdepartamentales como COPSA Y CITA." />
     <meta name="keywords"
@@ -32,9 +32,8 @@
 
     
     
-    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
     <meta name="theme-color" content="#033d8a" />
     <!-- link apple icon -->
     <link rel="apple-touch-icon" href="./assets/logo_192_blue-46e6c013.png">
@@ -45,11 +44,12 @@
         href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"
         charset="utf-8"></script> -->
-  <script type="module" crossorigin src="./assets/main-cb8bc7f0.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/for_all-16d9e570.js">
-  <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-ca1a41dd.js">
+  <script type="module" crossorigin src="./assets/main-7c37a969.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/for_all-75f931ed.js">
+  <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-505f7852.js">
   <link rel="stylesheet" href="./assets/for_all-f752904f.css">
   <link rel="stylesheet" href="./assets/L.Control-3c32fa88.css">
+  <link rel="stylesheet" href="./assets/index-abbba2f8.css">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 
 <body>
@@ -57,7 +57,7 @@
         <header class="d-flex justify-content-center barup">
             <!-- <div class=""> -->
             <div class="align-self-center p-1" id="logo">
-                <img src="./assets/logo_225_transparent-ab0c1d59.png" height="50rem" alt="" id="logo_img">
+                <img src="./assets/logo_225_transparent-ab0c1d59.png" height="50rem" alt="logo" id="logo_img">
             </div>
             <div class="m-0 p-0 align-self-center">
                 <h1 class="fw-bold m-0 p-0" id="text_title">¿Dónde está Mi Bondi?</h1>
@@ -69,20 +69,21 @@
         <section class="shadow-top p-3">
 
             <div class="d-flex justify-content-center" style="margin-top:4rem" id="first_text">
-                <div class="col-10 mt-1 mb-4 p-2 text-center ">
-                    <p class="">Ahora podés ubicar dónde está el ómnibus suburbano o interdepartamental para saber
-                        cuánto demora! Por ejemplo los COPSA o CITA.</p>
+                <div class="col-10 mt-1 mb-2 p-2 text-center ">
+                    <p class="">Ahora podés ubicar en tiempo real dónde está el ómnibus suburbano  para saber
+                        cuánto demora! Por ejemplo los COPSA, CITA, CODELESTE, Zeballos Hermanos, entre otros.</p>
+                        <p>También podés seguir tu bondi y buscar por paradas, sólo tenés que hacer zoom!</p>
                     <hr>
 
                 </div>
             </div>
             <div class="d-flex justify-content-center d-none" id="fav_lines_box">
-                 <div class="col-10 text-center mb-4">
+                <div class="col-10 text-center mb-4">
                     <p class="fw-bold mb-0">Líneas favoritas:</p>
-                    
+
                     <span id="fav_lines" c></span>
-                 </div>
-               
+                </div>
+
             </div>
             <!-- <button type="button" class="btn btn-danger delete-button">
                 Delete Button
@@ -103,7 +104,9 @@
                                 disabled>
                             </select>
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-outline-secondary  d-flex align-items-center ms-2 segundo" id="add_fav" disabled>
+                                <button type="button"
+                                    class="btn btn-outline-secondary  d-flex align-items-center ms-2 segundo"
+                                    id="add_fav" disabled>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-star" viewBox="0 0 16 16">
                                         <path
@@ -156,26 +159,47 @@
         <footer class="text-center pb-5 pt-3 px-4">
 
             <div class="h-auto pl-5 pr-5">
-                <p class="mt-3">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
+                <p class="mt-3" id="install_app">Podés instalar la app: <button class="btn btn-secondary btn-sm" id="pwa_btn"
                         disabled>Aquí</button> </p>
                 <p class="mb-0">Si te gusta el proyecto me podés comprar un <a href="https://mpago.la/2rD9qdS">cafecito
                         &#9749;.</a></p>
-                <p class="fs-6 ">En desarollo con &hearts; por <a
+                <p class="fs-6 ">Desarrollado con &hearts; por <a
                         href="https://www.linkedin.com/in/matias-rolando-9b5287179/">Mati</a></p>
+                <p><a style="text-decoration:none;" href="terms.html">Términos y Condiciones</a> | <a style="text-decoration:none;" href="privacy_police.html"> Política de Privacidad</a></p>
+
+
+                <div class="container">
+                    <!-- <h1>Social Sharing Buttons</h1> -->
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmibondi.com&text=Che%20pod%C3%A9s%20ubicar%20los%20bondis%20suburbanos%20con%20esta%20p%C3%A1ginaa" target="_blank" class="btn btn-primary">
+                                <i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmibondi.com" target="_blank" class="btn btn-primary">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                        </div>
+                        
+                        <!-- <div class="col">
+                            <a href="https://www.instagram.com/" target="_blank" class="btn btn-primary">
+                                <i class="bi bi-instagram"></i> Share on Instagram
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+
             </div>
         </footer>
         <div class="w-100 barra" style=" background-color: #0462DC;">
-            <button class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle"
-                onclick="window.location.href='#map'" style=" background-color: #0462DC;" id="map_btn"
+            <a class="btn btn-primary-outline position-absolute top-0 start-50 translate-middle" href="#map" style=" background-color: #0462DC;" id="map_btn"
                 aria-label="Show Map">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-geo-alt-fill"
                     viewBox="0 0 16 16">
                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                 </svg>
-            </button>
+            </a>
             <div class="row justify-content-around text-center">
                 <div class="col-4 ">
-                    <button class="btn btn-primary-outline boton-barra" onclick="window.location.href='./about.html'"
+                    <a class="btn btn-primary-outline boton-barra" href="about.html"
                         style=" background-color: #0462DC;" id="about_btn" aria-label="Show About page">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                             class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -183,12 +207,12 @@
                             <path
                                 d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                         </svg>
-                    </button>
+                    </a>
 
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
-                        id="routes_btn" aria-label="Show routes" onclick="window.location.href='./routes.html'">
+                    <a class="btn btn-primary-outline boton-barra" style=" background-color: #0462DC;"
+                        id="routes_btn" aria-label="Show routes" href="routes.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                             class="bi bi-sign-turn-right" viewBox="0 0 16 16">
                             <path
@@ -196,7 +220,7 @@
                             <path fill-rule="evenodd"
                                 d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435Zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134Z" />
                         </svg>
-                    </button>
+                    </a>
 
                 </div>
             </div>
@@ -210,19 +234,19 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Como instalar la app?</h1>
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">¿Como instalar la app?</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <h3>Si tenés un Iphone:</h3>
                     <p>Primero cliqueá en:</p>
-                    <img src="./assets/iphone_1-668d3a5a.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <img src="./assets/iphone_1-668d3a5a.jpg" class="rounded mx-auto d-block" alt="Dónde pulsar en iphone_1" width="350px">
                     <p>Y luego en:</p>
-                    <img src="./assets/iphone_2-5b47ca8b.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <img src="./assets/iphone_2-5b47ca8b.jpg" class="rounded mx-auto d-block" alt="Dónde pulsar en iphone_1" width="350px">
                     <hr>
                     <h3>Si tenés un dispositivo con Android:</h3>
                     <p>Primero cliqueá en los 3 puntitos (puede variar la ubicación dependiendo del navegador):</p>
-                    <img src="./assets/android_1-fd58e082.jpg" class="rounded mx-auto d-block" alt="..." width="350px">
+                    <img src="./assets/android_1-fd58e082.jpg" class="rounded mx-auto d-block" alt="Dónde pulsar en Android" width="350px">
                     <p>Luego haz click en "Instalar aplicación"</p>
 
                 </div>
@@ -235,24 +259,29 @@
     </div>
     <div class="modal fade" tabindex="-1" id="modal_whats_new">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">¿Que hay de nuevo? 0.0.8</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¿Que hay de nuevo? 0.0.8</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Ahora podés guardar tus líneas favoritas! Luego de añadirla pulsando
+                            la estrella&#11088; podrás pulsar sobre la línea y obtener los bondis rápidamente.</li>
+                        <li class="list-group-item">Rutas del Norte ahora está disponible! &#128652;</li> 
+
+                        <li class="list-group-item text-center mt-3">Recordá que podés <span class="fw-bold">instalar la app: </span> <button class="btn btn-info btn-sm" id="pwa_btn2"
+                            disabled>Aquí</button>  </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="close_modal_new">Cerrar y no volver a
+                        mostrar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Ahora podés guardar tus lineas favoritas! Luego de añadirla pulsando la estrella&#11088; podrás pulsar sobre la línea y obtener los bondis rápidamente.</li>
-                    <li class="list-group-item">Rutas del Norte ahora está disponible!	&#128652;</li>
-                  </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" id="close_modal_new">Cerrar y no volver a mostrar</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <script>
         let displayMode = "browser"
@@ -260,6 +289,36 @@
         if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
             displayMode = 'standalone';
         }
+        if(displayMode == 'standalone'){
+            document.getElementById("install_app").hidden = true;
+        }
+        function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
+        }
+
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
+
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
+
+        if (/Windows/i.test(userAgent)) {
+            return 'Windows';
+        } else if (/Macintosh|MacIntel|MacPPC|Mac68K/i.test(userAgent)) {
+            return 'Mac';
+        } else if (/Linux/i.test(userAgent)) {
+            return 'Linux';
+        }
+        return "nosesabe"
+    }
+        displaymode=displayMode +" "+ getMobileOperatingSystem()
         gtag('event', 'display_mode', { displayMode });
     </script>
 

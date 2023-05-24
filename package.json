@@ -20,6 +20,7 @@
     "@popperjs/core": "^2.11.6",
     "@types/workbox-window": "^5.0.0",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "jquery": "^3.6.4",
     "leaflet": "^1.9.3",
     "leaflet.locatecontrol": "^0.79.0",
