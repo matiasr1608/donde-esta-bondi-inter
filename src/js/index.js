@@ -1,7 +1,7 @@
 // const { cssNumber } = require("jquery");
 // const DENO_URL = 'backend.matiasrolando.com'
 const DENO_URL = 'https://backend.matiasrolando.com'
-var lineas = { 41: ['R1', 'R2', 'R10', 'R11', 'R12', 'R14', 'R15', 'R16', 'R17', 'R20', 'R24', 'R25'], 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', "L13", 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702", "702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4'], 50: ['100', '102', '103', '103SD', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', "124 SD", '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', "169 SD", '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '60 SD', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L112', 'L15', "L17", "L18", "L19", 'L2', 'L20', 'L22', "L23", 'L26', "L27", 'L28', 'L3', "L30", "L31", "L34", 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', "UAM1", "LM13", 'L12', 'L31', "L32", 'L33', "PB", 'U11C', "U11S", "U11T", "8SR", 'XA1'], 80: [] }
+var lineas = { 41: ['R1', 'R2', 'R10', 'R11', 'R12', 'R14', 'R15', 'R16', 'R17', 'R20', 'R24', 'R25'], 10: ['2', "D222", '222', '402', '404', '405', '407', '409', '427', '456', '494', '4A', '4AC', '4AD', '4D', "48D", '4DR', "5D", '600', '76', 'CE1', 'D9', 'G', "L13", 'L14', 'L16', 'L29', 'L7'], 13: ['15A', '15B', '6A', '6R6'], 18: ['1A', '2A', '700', '701', "702", "702R", '703', '704', '705', '706', '707', '708', '709', '710', '711', '712', '714', '724', '747', '748', '750', '751', '752', '757', '7A', '7E7R', '7E8R', "7E8D", "7H", '802', '803', '804', '805', "806", "807", "808", '809', "888", '8A', '8E7R', '8E8R', 'DM1', 'P757', 'P758', 'P759', 'P760', 'P761', 'P768', 'P7H', 'XA1', 'XA2'], 20: ["1M11", '1M1', '1M2', '1M3', '1M4', '1M5', '1M6', '1M7', '1M12', '1M13', '1M14', '1M15', '1M16', '1M6', '1M7', '2M1', '2M7', '2M8', '505', '522', '524', '526', '538', '546', '582', 'D11', 'L24', 'L25', 'L38', 'MD3', 'ML1'], 29: ['2K'], 32: ['S5', 'S6', 'S7'], 33: ['A1', 'A10', 'A11', 'A12', 'A14', 'A16', 'A18', 'A5', 'A6', 'A9'], 35: ['10A', '14A', '14AB', '14AR', 'T1', 'T14A', 'T2', 'T4N', 'T4R', 'T5', 'T6'], 36: [], 37: [], 39: ['Z1', 'Z2', 'Z3', 'Z4', "Z6"], 50: ['100', '102', '103', '103SD', '104', '105', '109', '110', '111', '112', '113', '115', '116', '117', '121', '124', "124 SD", '125', '127', '128', '130', '137', '141', '142', '143', '144', '145', '147', '148', '149', '150', '151', '155', '156', '157', '158', '163', '169', "169 SD", '174', '175', '180', '181', '183', '185', '186', '187', '188', '191', '192', '195', '199', '21', '214', '227', '230', "230D", '268', '276', '60', '60 SD', '62', '64', 'C1', 'C2', 'C3', 'C4', 'C5', 'CE1', 'D10', 'D5', 'D8', 'DE1', 'DM1', 'E14', 'G10', 'G11', 'G3', 'G8', 'L1', 'L112', 'L15', "L17", "L18", "L19", 'L2', 'L20', 'L22', "L23", 'L26', "L27", 'L28', 'L3', "L30", "L31", "L34", 'L35', 'L36', 'L39', 'L4', 'L41', 'L46', 'L5', 'L6', 'L9'], 70: ["6B", '11A', '17', '221', '300', '306', '316', '328', '329', '330', '370', '396', '71', '79', 'CE1', 'DM1', "UAM1", "LM13", 'L12', 'L31', "L32", 'L33', "PB", 'U11C', "U11S", "U11T", "8SR", 'XA1'], 80: [] }
 var buses = null;
 // var window.mapita = null;
 var groupMarkers = null;
@@ -14,7 +14,7 @@ var selectedBus = null;
 var timerfollowBus = null;
 var selectedMarker = null;
 let destinos = [];
-
+let tipos = null;
 import $, { type } from "jquery";
 
 
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
 
     window.addEventListener('appinstalled', () => {
-        let eventName = "installed_app_from_"+getMobileOperatingSystem()
+        let eventName = "installed_app_from_" + getMobileOperatingSystem()
         gtag("event", eventName)
     });
 
@@ -130,7 +130,10 @@ $(document).ready(function () {
         if (beforeInstallPrompt) { beforeInstallPrompt.prompt() };
     })
     $("#pwa_btn2").on("click", () => {
-        if (beforeInstallPrompt) { beforeInstallPrompt.prompt() };
+        if (beforeInstallPrompt) {
+            beforeInstallPrompt.prompt()
+            gtag("event", "install_promt_from_modal")
+        };
     })
     //button to show modal if there isnt an event
     setTimeout(() => {
@@ -463,9 +466,12 @@ $(document).ready(function () {
 
     // SEARCH BUTTON
     $("#search").click(async () => {
+        $("#search").html("Cargando...")
+
         if (firstTime) {
             ajaxSearchBuses($("#empresa").val(), $("#linea").val())
             gtag('event', 'searched_bus', { "empresa": $("#empresa").val(), "linea": $("#linea").val() });
+
             // console.log("hola hola")
         } else {
             if (!timeOut) {
@@ -476,6 +482,7 @@ $(document).ready(function () {
     }
     )
     const ajaxSearchBuses = (empresa, linea) => {
+        
         $.ajax(
             {
                 url: `${DENO_URL}/buses?codigoEmpresa=` + empresa + "&linea=" + linea,
@@ -484,11 +491,22 @@ $(document).ready(function () {
                 // data:JSON.stringify({"subsistema":"-1","empresa":"-1"}),
                 success: (response) => {
                     showResponseBuses(response)
+
                     console.log(response)
+                   
                 }
 
             }
         )
+    }
+
+    const scrollToElementWithMargin = (element, margin) =>{
+        const elementRect = element.getBoundingClientRect();
+        const offsetTop = elementRect.top - margin;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
     }
     //array for the markers of the map
     function showResponseBuses(response) {
@@ -500,11 +518,17 @@ $(document).ready(function () {
         // console.log(last)
         if (buses.length > 0) {
             destinos = new Array(); // to save later destinations to choose from
+            tipos = new Array();
             buses.forEach(bus => {
                 if (destinos.indexOf(bus.properties.destinoDesc) === -1) { destinos.push(bus.properties.destinoDesc) };//make a list of the destinations so u can show them as button to select
+                if (tipos.indexOf(bus.properties.sublinea) === -1) { tipos.push(bus.properties.sublinea) };
             });
+
+
+
             if (firstTime) {
                 adddestinatiosHtml();
+                addTypesHtml()
             }
             new Promise(function (resolve) {
                 filterBusesByDest();
@@ -521,24 +545,53 @@ $(document).ready(function () {
                 $("#search").addClass('disabled');
                 $("#search").html("Espere")
                 setTimeout(function () { $("#search").removeClass('disabled'); $("#search").html("Actualizar") }, 5000)
-                $("#select_company")[0].scrollIntoView()
-
+                // $("#select_company")[0].scrollIntoView()
+                if ($(window).width() < 992) {
+                    const targetElement = $("#select_company")
+                    const margin = 50;
+                    scrollToElementWithMargin(targetElement,margin)
+                    // $("#select_company")[0].scrollIntoView()
+                }
 
             } else {
-                $("#map")[0].scrollIntoView()
+                if ($(window).width() < 992) {
+                    setTimeout(()=>{
+                        
+    
+                        const targetElement = $("#map_bar")[0]
+                        const margin = 50; // Adjust the margin value according to your needs
+                        scrollToElementWithMargin(targetElement, margin); //si se puede mover la vista del scroll
+                        // $("#map_bar")[0].scrollIntoView()
+
+                    }
+                    ,150)
+                    
+
+                }
             }
             // $(".tercero").removeClass("invisible")
-            $(".tercero").removeAttr("hidden")
+            // $(".tercero").removeAttr("hidden")
+            $(".tercero").show()
 
         } else {
             $("#alert_tiempo").empty()
-
                 .append('<div class="alert alert-warning alert-dismissible fade show" role="alert">No hay ubicaciones reportadas para su búsqueda, intente nuevamente.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>')
-
+            $("#search").html("Buscar")
+            limiparTodo()
         }
         firstTime = false
     }
 
+    $("#separar_checkbox").on("click", () => {
+        $("#div_tipos").toggle()
+    }
+    )
+
+    const limiparTodo = () => {
+        window.mapita.removeLayer(groupMarkers)
+        groupMarkers = L.featureGroup();
+        $(".tercero").hide()
+    }
 
     function adddestinatiosHtml() {  //adds the destinations so u can toggle betwen them
         let i = 0
@@ -548,15 +601,35 @@ $(document).ready(function () {
             createFormChe(dest, filterBusesByDest, i)
         })
     }
+    const addTypesHtml = () => {
+        let i = 0
+        $("#switch_tipos").empty();
+        tipos.forEach((tipo) => {
+            i += 1;
+            createFormTipos(tipo, filterBusesByDest, i)
+        })
+    }
 
     const createFormChe = (dest, handler, i) => {
         $("#switch_destinations").append(
             `<div class= "form-check form-switch">
-                <input class="form-check-input" type="checkbox" name="prueba" role="switch" value="${dest}" id="flexSwitchCheck${i}" checked>
+                <input class="form-check-input" type="checkbox" name="check_destino" role="switch" value="${dest}" id="flexSwitchDest${i}" checked>
                 <label class="form-check-label" for="flexSwitchCheck${dest}">${dest}</label>
             </div>`
         );
-        $(`#flexSwitchCheck${i}`).click(() => handler())
+        $(`#flexSwitchDest${i}`).click(() => handler())
+
+    }
+
+    const createFormTipos = (tipo, handler, i) => {
+
+        $("#switch_tipos").append(
+            `<div class= "form-check form-switch">
+                <input class="form-check-input check-destinos" type="checkbox" name="check_tipo" role="switch" value="${tipo}" id="flexSwitchType${i}" checked>
+                <label class="form-check-label" for="flexSwitchCheck${tipo}">${tipo}</label>
+            </div>`
+        );
+        $(`#flexSwitchType${i}`).click(() => handler())
 
     }
 
@@ -564,11 +637,25 @@ $(document).ready(function () {
     const filterBusesByDest = () => {  //everytime a check is clicked updates the buses on the map
 
         var destChecked = new Array();
-        $(".form-check-input:checked").each(function () {
-            destChecked.push(($(this).val()))
-        })
+        var tiposChecked = new Array();
+        // $(".form-check-input:checked").each(function () {
+        //     destChecked.push(($(this).val()))
+        // })
+        $("input:checkbox[name=check_destino]:checked").each(function () {
+            destChecked.push($(this).val());
+        });
+        $("input:checkbox[name=check_tipo]:checked").each(function () {
+            tiposChecked.push($(this).val());
+        });
+
         let buesesChecked = buses.filter(bus => destChecked.includes(bus.properties.destinoDesc)) //
-        showBuses(buesesChecked, 15);
+        let busesTypesChecked = buesesChecked.filter(bus => tiposChecked.includes(bus.properties.sublinea))
+        if (false) {
+
+        } else {
+            showBuses(busesTypesChecked, 15);
+
+        }
 
     };
 
@@ -659,6 +746,10 @@ $(document).ready(function () {
 
     $("#empresa").change(function () {
         firstTime = true
+        $("#search").html("Buscar")
+        limiparTodo()
+
+
         var empresa = $("#empresa").val();
         // empresa = document.getElementById("empresa").value;
         $(".segundo").removeAttr("disabled");
@@ -669,6 +760,10 @@ $(document).ready(function () {
     })
     $("#linea").change(() => {
         firstTime = true
+        $("#search").html("Buscar")
+        limiparTodo()
+
+
     }
     )
     const saveSelectedBus = (e) => {   // saves the bus vinculated to the marker clicked
@@ -810,14 +905,14 @@ $(document).ready(function () {
     let showModal = window.localStorage.getItem("showModalVersion")
     const myModal = new bootstrap.Modal($("#modal_whats_new"));
     console.log(showModal, JSON.parse(showModal))
-    if (showModal == null || JSON.parse(showModal) != "0.0.8.1") {
+    if (showModal == null || JSON.parse(showModal) != "0.0.9") {
         myModal.show()
     }
 
     $("#close_modal_new").on("click", () => {
         myModal.hide()
 
-        window.localStorage.setItem("showModalVersion", JSON.stringify("0.0.8.1"))
+        window.localStorage.setItem("showModalVersion", JSON.stringify("0.0.9"))
     })
 
     let empresas = [

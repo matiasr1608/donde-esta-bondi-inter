@@ -18,18 +18,20 @@ window.onscroll = function () { scrollFunction() };
            $("header").css({"height": "2rem"});
         //    $("#text_title").css({"font-size": "calc(1.375rem + 1.5vw-1)"});
            $("#text_title").addClass("small");
-        
-
+           $("#text_title").removeClass("smallish");
 
         } else {
            //$("#logo").fadeIn("slow")
         //    console.log("hola")
 
-           $("#logo_img").attr("height","50rem")
+           $("#logo_img").attr("height","40rem")
            //$("#logo").removeAttr("hidden")
            $("header").css({"height": "4rem"});
         //    $("#text_title").css({"font-size": "1rem"});
            $("#text_title").removeClass("small");
+           if ($(window).width() < 350){
+            $("#text_title").addClass("smallish");
+           }
 
 
 
