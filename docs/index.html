@@ -44,6 +44,7 @@
         href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"
         charset="utf-8"></script> -->
+  
   <script type="module" crossorigin src="./assets/main-d91e9fbd.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/for_all-daa5477a.js">
   <link rel="modulepreload" crossorigin href="./assets/L.Control.Locate-034beaad.js">
@@ -75,11 +76,49 @@
                             <p class="">Ahora podés ubicar en tiempo real dónde está el ómnibus suburbano para saber
                                 cuánto demora! Por ejemplo los COPSA, CITA, CODELESTE, Zeballos Hermanos, entre otros.
                             </p>
-                            <p class="">También podés seguir tu bondi y buscar por paradas, sólo tenés que hacer zoom!</p>
+                            <p class="">También podés seguir tu bondi y buscar por paradas, sólo tenés que hacer zoom!
+                            </p>
                             <hr>
 
                         </div>
                     </div>
+                    <div class="text-center mb-1" >
+                        <style>
+                            .example_responsive_1 {
+                                /* display: none; */
+                                width: 320px;
+                                height: 100px;
+                            }
+                    
+                            @media(min-width: 500px) {
+                                .example_responsive_1 {
+                                    width: 468px;
+                                    height: 100px;
+                                }
+                            }
+                    
+                            @media(min-width: 800px) {
+                                .example_responsive_1 {
+                                    width: 728px;
+                                    height:130px;
+                                }
+                            }
+                        </style>
+                        <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9211148063872780"
+                        crossorigin="anonymous"></script>
+                    <!-- prueba_1 -->
+                    <ins class="adsbygoogle example_responsive_1" style="display:block" data-ad-client="ca-pub-9211148063872780"
+                        data-ad-slot="7533033442" ></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <span class="mb-2" data-bs-target="#modal_why_ads" data-bs-toggle="modal">¿Por qué veo anuncios?</span>
+                    </div>
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_why_ads">
+                        Launch static backdrop modal
+                      </button> -->
+                   
                     <div class="d-flex justify-content-center d-none" id="fav_lines_box">
                         <div class="col-10 text-center mb-4">
                             <p class="fw-bold mb-0">Líneas favoritas:</p>
@@ -128,12 +167,14 @@
 
                                 <div id="alert_tiempo">
                                 </div>
-                                <p class="tercero " style="display: none;" >Podés volver a actualizar todas las veces que quieras, incluso luego de seleccionar el destino.</p>
+                                <p class="tercero " style="display: none;">Podés volver a actualizar todas las veces que
+                                    quieras, incluso luego de seleccionar el destino.</p>
                                 <hr class="tercero" id="map_bar" style="display: none;">
                                 <div class="row tercero justify-content-center" style="display: none;">
                                     <div class="col-10  d-flex justify-content-center">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="separar_checkbox">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="separar_checkbox">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Filtrar por tipo (Directo/Común)
                                             </label>
@@ -148,11 +189,11 @@
 
                     </div>
 
-                    
+
 
                 </div>
                 <div class="col-12 col-lg-6 mt-lg-5">
-                    
+
                     <div class="row tercero justify-content-center text-center" style="display: none;">
                         <div class="col-sm-8 col-md-5 col-10">
 
@@ -173,18 +214,18 @@
                     </div>
                     <div class="text-center" id="map_info">
                         <p class="fs-6 fst-italic mb-0">Cliqueá sobre el bondi por más información!</p>
-        
+
                     </div>
                     <div class="d-flex justify-content-center pb-4">
                         <div class="d-flex col-sm-10 col-12" id="map" style="height: 30rem; z-index: 0">
-        
+
                         </div>
                     </div>
                 </div>
 
             </div>
 
-           
+
 
 
 
@@ -307,7 +348,7 @@
                 <div class="modal-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            Podés separar los bondis por el tipo! Ya sean directos o comúnes u otras verisones. 
+                            Podés separar los bondis por el tipo! Ya sean directos o comúnes u otras verisones.
                         </li>
                         <li class="list-group-item">Ahora podés guardar tus líneas favoritas! Luego de añadirla pulsando
                             la estrella&#11088; podrás pulsar sobre la línea y obtener los bondis rápidamente.</li>
@@ -325,8 +366,26 @@
                 </div>
             </div>
         </div>
-    </div>
+        
 
+    </div>
+    <div class="modal fade" id="modal_why_ads" >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¿Por qué hay anuncios?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Holi! Debido a que la página no está afiliada con ninguna empresa, es necesario que haya publicidad para poder generar algún ingreso y así solventar parte de los costos (ej. pago del dominio, entre otros).</p>
+                    <p>La idea es que no sea invasiva y no moleste al usuario, si te parece que molesta, mandame un correo a hola@matiasrolando.com</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         let displayMode = "browser"
         const mqStandAlone = '(display-mode: standalone)';
@@ -364,8 +423,8 @@
         }
         displayMode = displayMode + "_" + getMobileOperatingSystem()
         gtag('event', 'display_mode', { displayMode });
-        
-        gtag('event', 'appVersion', {appVersion: '0.0.9'})
+
+        gtag('event', 'appVersion', { appVersion: '0.0.9' })
     </script>
 
 </body>
